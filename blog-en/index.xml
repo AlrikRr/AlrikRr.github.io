@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog-en on AlrikRr-Blog</title>
+    <link>/blog-en/</link>
+    <description>Recent content in Blog-en on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog-en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🇬🇧 How to setup a Wireguard VPN - NixOS</title>
+      <link>/blog-en/nixos/wireguard-nixos/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/nixos/wireguard-nixos/</guid>
+      <description>Special thnks to Rayan Lahfa
+and Klaes ;)
+ Wiki ! You can use the default configuration file : Nixos-Wireguard
+Install &amp;amp; setup First, you need to install wireguard using :
+$ nix-env -iA nixos.wireguard Now, you need to create the wireguard.nix file, this file will contain the default configuration of Wireguard :
+$ vim /etc/nixos/wireguard.nix Generate keys You need to creat a bunch of public/private keys for your server and your android client :</description>
+    </item>
+    
+    <item>
+      <title>🇬🇧 SSH simple setup</title>
+      <link>/blog-en/nixos/ssh-nixos/</link>
+      <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/nixos/ssh-nixos/</guid>
+      <description>Special thanks to Rayan Lahfa
+ SSH configuration TO change the confguration of you SSH, you have to edit your configuration.nix.
+You cannot edit the default ssh file located in /etc/ssh/sshd_config.
+Enable openssh First, you need to enable the OpenSSH Daemon.
+[...] # List services that you want to enable: services.openssh.enable = true; [...] Enable root login For your first install, you may need to acces your NixOS VM using SSH but the root connction is not allowed by default.</description>
+    </item>
+    
+    <item>
+      <title>🇬🇧 NixOS setup - Beginners</title>
+      <link>/blog-en/nixos/conf-nixos/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/nixos/conf-nixos/</guid>
+      <description>Special thanks to Rayan Lahfa
+ Basic setup file The NixOS configuration file can be found in /etc/nixos/configuration.nix.
+It is recommended to understand the configuration file before pasting it supidly into your own, there are some options to change and configure by yourself !
+# Edit this configuration file to define what should be installed on # your system. Help is available in the configuration.nix(5) man page # and in the NixOS manual (accessible by running ‘nixos-help’).</description>
+    </item>
+    
+    <item>
+      <title>🇬🇧 NixOS Install - Beginners</title>
+      <link>/blog-en/nixos/install-nixos/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/nixos/install-nixos/</guid>
+      <description>Special thanks to Rayan Lahfa
+ ISO &amp;amp; VBOX configuration This tutorial was realized with a virtual environment using VirtualBox, don&amp;rsquo;t forget to activate the EFI option into your VM configuration.
+You can download the official NIXOS ISO here : nixos.org/download
+Don&amp;rsquo;t hesitate to read the wiki here : nixos.org
+Installation If you have any issue, Google is your friend
+For this install, I used a Virtual Disk of 25GiB.</description>
+    </item>
+    
+  </channel>
+</rss>

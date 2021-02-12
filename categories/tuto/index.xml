@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tuto on AlrikRr-Blog</title>
+    <link>/categories/tuto/</link>
+    <description>Recent content in Tuto on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/tuto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
+      <link>/blog-fr/tuto/pop-os-installation-btrfs/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto/pop-os-installation-btrfs/</guid>
+      <description>Hello !
+Dans ce tuto nous allons voir comment installer Pop_OS! 20.04 avec :
+ Chiffrement LUKS LVM EFI BTRFS Backup BTRFS  Pour la réalisation de ce tutoriel, j&amp;rsquo;ai repris la vidéo de Will Mutschler disponible ici : Pop! OS 20.04 BTRFS-LUKS install guide, Ubuntu style subvolumes, easy system snapshots &amp;amp; rollback
+Si vous voulez, vous pouvez utilisez sa vidéo (EN) qui sera plus explicative qu&amp;rsquo;un tuto écrit avec quelques capture d&#39;écran :)</description>
+    </item>
+    
+    <item>
+      <title>Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
+      <link>/blog-fr/tuto/coffre-securise-sshfs/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto/coffre-securise-sshfs/</guid>
+      <description>Les Scripts ! Comme je le disais dans la première partie, vous devez avoir une autre machine accessible via SSH sans mot de passe pour la suite.
+Donc, que vont faire nos scripts ?
+ Disons que votre COFFRE est dans la machine @vault Vous voulez accéder à votre COFFRE depuis votre machine @client avec SSHFS Nous allons créer déjà 2 scripts en local dans @vault (montage &amp;amp; démontage) Ensuite, nous allons créer 2 autres scripts dans @client (remote_montage &amp;amp; remote_démontage)  Vous allez comprendre avec les scripts :)</description>
+    </item>
+    
+    <item>
+      <title>Installation de MacOS sur Linux avec KVM</title>
+      <link>/blog-fr/tuto/macos-sur-linux-kvm/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto/macos-sur-linux-kvm/</guid>
+      <description>Comment installer MacOS Catalina sur votre Linux avec KVM.
+Merci a foxlet pour son tutoriel disponible ici : foxlet/macOS-Simple-KVM
+ Requirements Premièrement, vous allez devoir installer QEMU (3.1&amp;gt;=), Python3 et pip. Il n&amp;rsquo;est pas necessaire d&amp;rsquo;avoir un ISO MacOs pour cette installation. C&amp;rsquo;est un avantage :)
+Pour avoir plus d&amp;rsquo;information, je vous conseil de regarder le lient vers le github de foxlet juste au dessus !
+ Installation Clonez le repo et commencez l&amp;rsquo;installation</description>
+    </item>
+    
+    <item>
+      <title>Maîtrisez SSH comme jamais !</title>
+      <link>/blog-fr/tuto/ssh-expert-tips/</link>
+      <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto/ssh-expert-tips/</guid>
+      <description>Génération de clés # Générer vos clés Publique et Privée ~ 竈門» shh-keygen -t &amp;lt;algorithm&amp;gt; ed25519 est recommandé mais certaines applications ne support pas cet alogithme,je vous conseil de créer 2 clés, une en ed25519 et une en RSA.
+Les clés que vous veneez de créer ont pour répertoire par défault : ~/.ssh Il n&amp;rsquo;est pas nécessaire de mettre une pass-pharse, si vous voulez en mettre une vous pouvez mais elle vous sera demandée à chaque connexion.</description>
+    </item>
+    
+    <item>
+      <title>Installation de Dropbear-initramfs</title>
+      <link>/blog-fr/tuto/dropbear-initramfs/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto/dropbear-initramfs/</guid>
+      <description>Le principal problème quand on a un serveur chiffré, c&amp;rsquo;est au moment du redémarrage de celui-ci, il faut être présent pour entrer la pass-phrase et ainsi démarrer sont serveur.
+Du moins, c&amp;rsquo;est ce que vous devriez faire si vous n&amp;rsquo;avait pas installer dropbear-initramfs !
+Dropbear-initramf est un petit serveur SSH qui va tourner juste après votre GRUB et avant que votre machine ne démarre. De ce fait, vous pourrez vous y connecter et entrer la pass-phrase de votre serveur !</description>
+    </item>
+    
+    <item>
+      <title>Créer son site web avec Github-page et Hugo</title>
+      <link>/blog-fr/tuto/creer-son-blog-avec-hugo/</link>
+      <pubDate>Sun, 21 Jun 2020 15:47:56 +0200</pubDate>
+      
+      <guid>/blog-fr/tuto/creer-son-blog-avec-hugo/</guid>
+      <description>Vous avez besoin d&amp;rsquo;un site web static rapidement, pas de quoi dépenser pour heberger ? Vous avez frapper à la bonne porte.
+Ici je vais vous monter comment installer et configurer votre site web avec Hugo server.
+Ce tutoriel fonctionne également sous MacOS.
+ Installer hugo et git # Unix $ sudo apt install hugo git # MacOs $ brew install hugo git  Création des repo git Depuis l&amp;rsquo;application web github, vous allez devoir créer 2 repo.</description>
+    </item>
+    
+  </channel>
+</rss>

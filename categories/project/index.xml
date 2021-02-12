@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on AlrikRr-Blog</title>
+    <link>/categories/project/</link>
+    <description>Recent content in Project on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>❄️ Formation NixOS - FYC ESGI</title>
+      <link>/projects/formationnixos/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/formationnixos/</guid>
+      <description>Formation NixOS Nous étions une équipe de 4 personnes pour réaliser une formation &amp;ldquo;complète&amp;rdquo; débutant et avancée sur l&amp;rsquo;utilisation et la configuration de NixOS.
+Cette formation est composée de cours au format vidéo / PDF / Quizz.
+Elle sera disponible (date indéterminée) sur youtube au format vidéo.
+FYC - ESGI Le FYC est un projet qui a pour but de remplacer le mémoire de fin d&amp;rsquo;année du master à l&amp;rsquo;ESGI.</description>
+    </item>
+    
+  </channel>
+</rss>

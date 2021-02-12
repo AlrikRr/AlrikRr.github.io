@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on AlrikRr-Blog</title>
+    <link>/categories/android/</link>
+    <description>Recent content in Android on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analyse dynamique android avec proxy et SSL pinning bypass</title>
+      <link>/blog-fr/secu/analyse-dynamique-android/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/secu/analyse-dynamique-android/</guid>
+      <description>Hello, dans ce tutoriel nous allon svoir comment installer et configurer Android-Studio pour avoir un émulateur sous android.
+Ensuite nous allons configurer un proxy avec burp-suite pour analyse une application android.
+Pour finir, nous allons voir comment implémenter frida et frida-server pour bypass le SSL Pinning et voir le traffic via notre proxy.
+Bon tuto ;)
+ Pré-Requis Quelques pré-requis avant de vous lancer dans ce tutoriel :
+ Installer Burp-Suite Lien ICI   Android-Studio Rappel : Tout ce que vous allez voir à été réaliser sous Linux Pop!</description>
+    </item>
+    
+  </channel>
+</rss>

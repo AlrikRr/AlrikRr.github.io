@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry on AlrikRr-Blog</title>
+    <link>/categories/raspberry/</link>
+    <description>Recent content in Raspberry on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/raspberry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🇫🇷  Installation Simple et Sécurisée de Raspbian OS (Lite)</title>
+      <link>/blog-fr/iot/basic-installation/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/iot/basic-installation/</guid>
+      <description>Hello, dans ce tutoriel qui est le premier de la catégorie Raspberry je vais vous montrer ma méthode d&amp;rsquo;installation et de configuration pour Raspbian OS en minimal.
+Ce tutoriel est là pour vous montrer les logiciels et configuration de base pour avoir une architecture simple et sécurisée. Je ne suis en aucun cas un expert, il se peut qu&amp;rsquo;il y ai des erreurs, mais l&amp;rsquo;essentiel et là :)
+Si jamais vous voyez une grosse boulette, n&amp;rsquo;hésitez pas à venir vers moi !</description>
+    </item>
+    
+  </channel>
+</rss>

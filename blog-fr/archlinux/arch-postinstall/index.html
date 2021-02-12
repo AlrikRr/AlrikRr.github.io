@@ -1,0 +1,1692 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "🇫🇷  Archlinux Post-Install !",
+        "headline" : "🇫🇷  Archlinux Post-Install !",
+        "description" : "Configuration Archlinux i3-gaps et autres tools pour bien commencer !",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-14 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2020-09-14 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/archlinux\/arch-postinstall\/",
+        "wordCount" : "1331",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>🇫🇷  Archlinux Post-Install !</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="Configuration Archlinux i3-gaps et autres tools pour bien commencer !">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="🇫🇷  Archlinux Post-Install !"/>
+<meta name="twitter:description" content="Configuration Archlinux i3-gaps et autres tools pour bien commencer !"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="🇫🇷  Archlinux Post-Install !" />
+<meta property="og:description" content="Configuration Archlinux i3-gaps et autres tools pour bien commencer !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/archlinux/arch-postinstall/" />
+<meta property="article:published_time" content="2020-09-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-14T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="🇫🇷  Archlinux Post-Install !">
+<meta itemprop="description" content="Configuration Archlinux i3-gaps et autres tools pour bien commencer !">
+<meta itemprop="datePublished" content="2020-09-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1331">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-18'>
+                                    November 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-11-11'>
+                                    November 11, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-18'>
+                                    September 18, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-15'>
+                                    September 15, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-14'>
+                                    September 14, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-12'>
+                                    September 12, 2020</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;text=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h1>
+            
+        
+        
+            <p>Configuration Archlinux i3-gaps et autres tools pour bien commencer !</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-09-14'>
+            September 14, 2020</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>7 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;text=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2farchlinux%2farch-postinstall%2f&amp;title=%f0%9f%87%ab%f0%9f%87%b7%20%20Archlinux%20Post-Install%20%21" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <h1 id="post-installation-archlinux">Post installation Archlinux</h1>
+<p>Je vous mets à disposition mes fichiers de configuration à la fin de ce tuto.</p>
+<p>Bonne configuration :)</p>
+<h2 id="clavier">Clavier</h2>
+<p>Votre clavier n&rsquo;est pas en français ?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ keymaps fr
+OU
+$ setxkbmap fr
+</code></pre></div><p>Pour changer la langue de manière permanante :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vim /etc/locale.gen
+</code></pre></div><p>et dé-commentez la ligne :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#LANG=fr_FR.UTF-8</span>
+</code></pre></div><p>Voir : <a href="https://wiki.archlinux.fr/Clavier">Clavier Archlinux Wiki</a></p>
+<h2 id="networking">Networking</h2>
+<p>Impossible de ping ?</p>
+<p>Jettez un oeil à votre <code>/etc/resolv.conf</code> et ajoutez la ligne suivante</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nameserver 1.1.1.1 
+</code></pre></div><h3 id="ethernet">Ethernet</h3>
+<p>Si vous n&rsquo;arrivez toujours pas à accéder à internet :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl start systemd-networkd
+</code></pre></div><p>Récupéré le nom de votre interface ethernet <code>ip a</code> et créez le fichier suivant :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/systemd/network/&lt;interface&gt;.network
+</code></pre></div><p>Ajoutez :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Match<span style="color:#f92672">]</span>
+Name<span style="color:#f92672">=</span>&lt;interface&gt;
+<span style="color:#f92672">[</span>Network<span style="color:#f92672">]</span>
+DHCP<span style="color:#f92672">=</span>ipv4
+</code></pre></div><h3 id="wi-fi">Wi-Fi</h3>
+<p>Pour trouver le nom de la carte wifi :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lscpi
+</code></pre></div><p>De mon côté, j&rsquo;ai une carte <strong>Qualcomm Atheros QCA9377</strong>, je vais avoir besoin des drivers <code>ath10k_pci</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+sudo pacman -S linux-firmware
+sudo modprobe -r ath10k_pci <span style="color:#f92672">&amp;&amp;</span> sudo modprobe ath10k_pci
+</code></pre></div><p>si la carte wifi n&rsquo;est pas UP :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set wlan0 up
+</code></pre></div><p>Certaines cartes peuvent être soft-bloquées. Pour les débloquer, utiliser l&rsquo;outil <code>rfkill</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S rfkill
+</code></pre></div><p>Pour afficher la liste des device bloqués :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rfkill
+</code></pre></div><p>Ensuite pour les débloquer :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rfkill unblock all
+</code></pre></div><h2 id="power-management">Power Management</h2>
+<p>Pour la gestion de l&rsquo;alimentation, il nous faut installer un outils pour gérer les différents profils d&rsquo;alimentation.</p>
+<p>Un problème assez embêtant sur la configuration actuelle c&rsquo;est la carte wifi qui se désactive quand le laptop est fermé.</p>
+<p>Pour résoudre le problème il nous faut installer et configuer <code>tlp</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S tlp tlp-rdw
+</code></pre></div><p>Ensuite on initialise nos services :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl enable tlp.service
+systemctl enable NetworkManager-dispatcher.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
+</code></pre></div><p>Ensuite pour la configuration, le fichier se trouve dans <code>/etc/tlp.conf</code>.
+Il vous faut modifier les lignes suivantes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">WIFI_PWR_ON_AC <span style="color:#f92672">=</span> on
+WIFI_PWR_ON_BAT <span style="color:#f92672">=</span> on
+</code></pre></div><h2 id="update">Update</h2>
+<p>Pour voir si tout est ok, on va lancer une update :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu
+</code></pre></div><p>Si tout est ok, on peut continuer, sinon je vous invite à rechercher vos messages d&rsquo;erreurs ou vos equipement réseau sur internet et de fouiller sur les forums Archlinux :)</p>
+<h2 id="aur-yay">AUR yay</h2>
+<p>Pour téléchargez les paquets AUR de archlinux, nous allons utiliser [YAY](# AUR yay)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://aur.archlinux.org/yay.git
+$ cd yay
+$ makepkg -si
+</code></pre></div><p>Pour installer un paquet, c&rsquo;est comme pacman :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yay -S &lt;aur&gt;
+</code></pre></div><h2 id="interface-graphique">Interface graphique</h2>
+<h3 id="fonts">fonts</h3>
+<p>Les fonts sont nécessaire pour certaines applications afin d&rsquo;afficher des emojis et autres langues différentes :</p>
+<p>Les fonts que j&rsquo;utilise pour ma polybar</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts
+$ yay -S nerd-fonts-complete
+$ yay -S ttf-freefont ttf-ms-fonts ttf-linux-libertine ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family
+</code></pre></div><p>Pour recharger la configuration des fonts :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fc-cache -vf
+</code></pre></div><h3 id="i3-gaps">I3-gaps</h3>
+<p>Pour l&rsquo;interface graphique, je vais installer <code>i3-gaps</code> et <code>Xorg-server</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S i3-gaps ttf-dejavu i3status i3blocks i3lock
+$ sudo pacman -S xorg xorg-init terminator
+$ sudo pacman -S xf86-video-intel mesa 
+$ pacman -S alsa-utils
+</code></pre></div><p>Modifiez le fichier suivant :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim /etc/X11/xinit/xinitrc
+</code></pre></div><p>Commentez :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># twm &amp;</span>
+<span style="color:#75715e"># exec xterm</span>
+</code></pre></div><p>Ajoutez :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec i3
+</code></pre></div><p>Créer un dossier <code>i3</code> das <code>.config</code> à la racine de votre home :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir ~/.config/i3
+</code></pre></div><p>Copier la configuration par défaut de i3 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/i3/config ~/.config/i3/config
+</code></pre></div><p>Maintenant, on va démarrer notre interface graphique :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">startx
+</code></pre></div><p>Chemin du fichier : <code>~/.config/i3/config</code></p>
+<p>Mon fichier de conf : <a href="/docs/arch-config/i3/config">config</a></p>
+<h3 id="lightdm">lightdm</h3>
+<p>Il nous faut installer lightdm  pour choisir notre desktop et avoir une interface de connexion au démarrage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+
+$ systemctl enable lightdm
+
+$ reboot
+
+</code></pre></div><p>Pour éditer le theme lightdm-greeter, lancer l&rsquo;application en root :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo lightdm-gtk-greeter-settings
+</code></pre></div><h3 id="polybar">polybar</h3>
+<p>Pour avoir la documentation complète, rendez-vous <a href="https://wiki.archlinux.org/index.php/Polybar">ICI</a>.</p>
+<p>Une liste de themes <a href="https://github.com/adi1090x/polybar-themes">ICI</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yay polybar
+</code></pre></div><p>Pensez à copier le fichier de configuration par défaut :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cp /usr/share/doc/polybar/config /home/eidorian/.config/polybar/config
+</code></pre></div><p>Créez le script à l&rsquo;emplacement suivant <code>~/.config/polybar/launch.sh</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Terminate already running bar instances</span>
+killall -q polybar
+
+<span style="color:#75715e"># Wait until the processes have been shut down</span>
+<span style="color:#66d9ef">while</span> pgrep -u $UID -x polybar &gt;/dev/null; <span style="color:#66d9ef">do</span> sleep 1; <span style="color:#66d9ef">done</span>
+
+<span style="color:#75715e"># Launch Polybar, using default config location ~/.config/polybar/config</span>
+polybar mybar &amp;
+
+echo <span style="color:#e6db74">&#34;Polybar launched...&#34;</span>
+
+</code></pre></div><p>Et ajoutez la ligne suivante dans la configuration i3 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+</code></pre></div><p>Ne pas oublier de changer [bar/exemple] en [bar/mybar] dans le fichier de configruation de polybar.</p>
+<p>Chemin du fichier : <code>~/.config/polybar/config</code></p>
+<p>Mon fichier de conf : <a href="/docs/arch-config/polybar/config">config</a></p>
+<p>Pour plus d&rsquo;information sur polybar : <a href="https://github.com/polybar/polybar">rendez-vous ICI</a></p>
+<h3 id="rofi">rofi</h3>
+<p>rofi va nous service de lanceur d&rsquo;application.</p>
+<p>Installation :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S rofi
+</code></pre></div><p>Modifier le fichier de configuration i3</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.config/i3/config
+</code></pre></div><p>Modifier le bindsym associé par celui-là :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bindsym Mod4+d exec rofi -modi drun -show drun -font <span style="color:#e6db74">&#34;DejaVu Sans 15&#34;</span> -show-icons -theme slate
+</code></pre></div><p>Chemin du fichier :<code>~/.config/rofi/slate.rsi</code></p>
+<p>Mon fichier de conf :<a href="/docs/arch-install/rofi/slate.rsi">config</a></p>
+<h3 id="feh">feh</h3>
+<p>feh va nous servir afin d&rsquo;afficher un fond d'écran avec i3.</p>
+<p>Pour l&rsquo;installer :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S feh
+</code></pre></div><p>On ajoute ensuite cette ligne dans le fichier de configuration <code>i3</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec_always --no-startup-id feh --bg-fill --randomize ~/Images/wallpaper/*
+</code></pre></div><h3 id="i3-gaps-1">i3-gaps</h3>
+<p>Pour l&rsquo;utilisation de i3-gaps, on va ajouter les lignes suivantes dans le fichier de configuration i3 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gaps inner <span style="color:#ae81ff">10</span>
+gaps outer <span style="color:#ae81ff">20</span>
+smart_gaps on
+for_window <span style="color:#f92672">[</span>class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;^.*&#34;</span><span style="color:#f92672">]</span> border pixel <span style="color:#ae81ff">0</span>
+</code></pre></div><h3 id="compton-et-picom">compton et picom</h3>
+<p>Pour la transparence du terminal j&rsquo;utilise picom, anciennement compton.
+Mon terminal est <code>Terminator</code></p>
+<p>installation :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S compton
+</code></pre></div><h4 id="ancienne-version-ne-fonctionne-plus">Ancienne version (ne fonctionne plus):</h4>
+<p>Pour la configuration, on ajoute cette ligne dans le fichier de configuration i3:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec_always --no-startup-id compton --config /
+</code></pre></div><p>On va ensuite modifier le fichier de configuration compton, s&rsquo;il n&rsquo;existe pas, on va le créer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim ~/.config/compton.config
+</code></pre></div><p>On ajoute :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">opacity-rule <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;90:class_g = &#39;Terminator&#39;&#34;</span><span style="color:#f92672">]</span> 
+</code></pre></div><h4 id="nouvelle-version-">Nouvelle version :</h4>
+<p>Dans la config i3 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec_always --no-startup-id ~/.config/polybar/scripts/picom.sh
+</code></pre></div><p>Le script <code>picom.sh</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim .config/polybar/scripts/picom.sh
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>killall picom
+picom -b
+</code></pre></div><p>Il ne nous reste plus qu'à modifier la transparence directement avec les options du terminal.</p>
+<h2 id="neofetch">neofetch</h2>
+<p>Afficher les information du système dans le terminal :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S neofetch
+</code></pre></div><p>Chemin du fichier :<code>~/.config/neofetch/config.conf</code></p>
+<p>Mon fichier de conf :<a href="/docs/arch-config/neofetch/config.conf">config</a></p>
+<h2 id="flameshot">flameshot</h2>
+<p>Un outil très puissant pour les capture d'écran, on va le blind avec un raccourci i3, la touche <code>impr</code> imprime-écran.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo pacman -S flameshot
+</code></pre></div><p>On ajoute ensuite cette ligne dans la config i3 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bindsym --release Print exec flameshot gui
+</code></pre></div><h2 id="outils-binaire">Outils Binaire</h2>
+<p>Pour l&rsquo;exploitation de binaire et le reverse, je vais devoir installer des librairies de la <code>libc</code> ainsi que d&rsquo;autres outils :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S gdb lib32-glibc  gcc-multilib lib32-gcc-libs
+</code></pre></div><p>Pour l&rsquo;installation de <code>gef</code> , le plugin GDB :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py
+$ echo source ~/.gdbinit-gef.py &gt;&gt; ~/.gdbinit
+</code></pre></div><p>Dispo sur le <a href="https://github.com/hugsy/gef">Github ICI</a></p>
+<h2 id="serveur-samba">Serveur Samba</h2>
+<p>Pour monter un serveur samba qui se trouve sur votre réseau, il vous faut les outils <code>cifs</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S cifs-utils
+</code></pre></div><p>Une fois les outils installé, il vous faut redémarrer votre ordinateur et vérifier que le module kernel est bien chargé :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe cifs
+</code></pre></div><p>Bien, maintenant, il vous reste plus qu'à monter votre partage :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mount -v -t cifs //192.168.1.100/public /home/eidorian/Public -o user<span style="color:#f92672">=</span>guest
+</code></pre></div><h2 id="autres-applications">Autres applications</h2>
+<h3 id="firefox">firefox</h3>
+<p>Installer un navigateur internet pour visiter le wiki archlinux ;)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S firefox
+</code></pre></div><h3 id="terminator">terminator</h3>
+<p>Terminal très personnalisable:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S terminatir
+</code></pre></div><p>Chemin du fichier : <code>~/.config/terminator/config</code></p>
+<p>Mon fichier de conf :<a href="/docs/arch-config/terminator/config">config</a></p>
+<h3 id="ranger">ranger</h3>
+<p>Installation de ranger, l&rsquo;explorateur de fichier basé sur vim :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S ranger
+</code></pre></div><h3 id="bitwarden">bitwarden</h3>
+<p>Installation de bitwarden, le gestionnaire de mot de passe:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yay -S bitwarden
+</code></pre></div><h3 id="obsidian">Obsidian</h3>
+<p>Installation de l&rsquo;IDE markdown très complet :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yay -S obsidian-appimage
+</code></pre></div><h3 id="udiskctl">udiskctl</h3>
+<p>Outils qui va vous permettre de monter des clés USB sans utiliser la commande sudo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S udiskie
+</code></pre></div><p>Lien sur le <a href="https://wiki.archlinux.org/index.php/Udisks">wiki archlinux </a></p>
+<h3 id="virtualbox">virtualbox</h3>
+<p>Vous permet de créer des Machines Virtuelles :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S virtualbox
+yay -S virtualbox-host-modules-arch
+sudo pacman -S virtualbox-guest-iso
+yay -S virtualbox-ext-oracle
+</code></pre></div><p>Chargement du module kernel :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo  modprobe vboxdrv
+</code></pre></div><p>Pour plus d&rsquo;information randez-vous sur <a href="https://wiki.archlinux.org/index.php/VirtualBox">le wiki archlinux </a></p>
+<h3 id="arduino">Arduino</h3>
+<p>Installation de l'éditeur Arduino :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S arduino arduino-avr-core
+</code></pre></div><p>Ajout de l&rsquo;utilisateur dans les groupes <code>lock</code> et <code>uucp</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo usermod -G lock eidorian
+sudo usermod -G uucp eidorian
+</code></pre></div><p>Chargez le module :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe cdc_acm
+</code></pre></div><p>Pour plus d&rsquo;information rangez-vous sur <a href="https://wiki.archlinux.org/index.php/Arduino">le wiki archlinux</a></p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/archlinux">Archlinux</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/binary/4-bufferoverflow/"
+                class="button big previous">🇫🇷  BufferOverflow 32bits sans protection</a></li>
+    
+
+    
+        <li><a href="/blog-fr/binary/5-ret2win/"
+                class="button big next">🇫🇷  ROP32 sans protection</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-rubberducky/">🇫🇷  #2 P4wnP1:ALOA RubberDucky</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-18'>
+                November 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-rubberducky/" class="image featured">
+            <img src="/img//iot/P4-RubberDucky/P4wnP1-rubberducky-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/iot/p4wnp1-installation/">🇫🇷  #1 P4wnP1:ALOA Installation</a>
+              </h3>
+              
+              <time class="published" datetime='2020-11-11'>
+                November 11, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/iot/p4wnp1-installation/" class="image featured">
+            <img src="/img//iot/P4/P4wnP1-install-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/6-ret2libc/">🇫🇷  Ret2libc avec protection NX</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-18'>
+                September 18, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/6-ret2libc/" class="image featured">
+            <img src="/img//binary/6-ret2lib-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/5-ret2win/">🇫🇷  ROP32 sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-15'>
+                September 15, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/5-ret2win/" class="image featured">
+            <img src="/img//binary/5-ret2win-binary.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-14'>
+                September 14, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
+            <img src="/img//arch/arch-post/arch-banner.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/binary/4-bufferoverflow/">🇫🇷  BufferOverflow 32bits sans protection</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-12'>
+                September 12, 2020
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/binary/4-bufferoverflow/" class="image featured">
+            <img src="/img//binary/4-binary-bufferoverflow.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/tuto/">tuto</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
