@@ -6,10 +6,25 @@
     <description>Recent content in Blog-en on AlrikRr-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog-en/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🇬🇧 Vulnhub writeup : Bellatrix</title>
+      <link>/blog-en/vulnhub/bellatrix/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/vulnhub/bellatrix/</guid>
+      <description>LEVEL : Medium
+TIME SPEND : 1h10
+LINK : Bellatrix
+ NMAP Okay let&amp;rsquo;s start with the beginning !
+sudo nmap -A -sS bellatrix.vuln
+As we can see, there are two main services :
+   PORT Status Banner     22 OPEN OpenSSH 8.3p1   80 OPEN Apache http 2.4.46    Web Application The web application is using the http port 80. This page is a static html with a gif and a strange text with a .</description>
+    </item>
     
     <item>
       <title>🇬🇧 How to setup a Wireguard VPN - NixOS</title>

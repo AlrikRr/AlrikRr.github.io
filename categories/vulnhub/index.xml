@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vulnhub on AlrikRr-Blog</title>
+    <link>/categories/vulnhub/</link>
+    <description>Recent content in vulnhub on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/vulnhub/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🇬🇧 Vulnhub writeup : Bellatrix</title>
+      <link>/blog-en/vulnhub/bellatrix/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/vulnhub/bellatrix/</guid>
+      <description>LEVEL : Medium
+TIME SPEND : 1h10
+LINK : Bellatrix
+ NMAP Okay let&amp;rsquo;s start with the beginning !
+sudo nmap -A -sS bellatrix.vuln
+As we can see, there are two main services :
+   PORT Status Banner     22 OPEN OpenSSH 8.3p1   80 OPEN Apache http 2.4.46    Web Application The web application is using the http port 80. This page is a static html with a gif and a strange text with a .</description>
+    </item>
+    
+  </channel>
+</rss>
