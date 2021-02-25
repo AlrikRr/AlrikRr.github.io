@@ -6,10 +6,25 @@
     <description>Recent content in vulnhub on AlrikRr-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/vulnhub/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🇬🇧 Vulnhub writeup : y0usef 1</title>
+      <link>/blog-en/vulnhub/y0usef/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/vulnhub/y0usef/</guid>
+      <description>LEVEL : Easy
+TIME SPEND : 1h30
+LINK : y0usef 1
+ NMAP Welcome to a new writeup vulnhub.
+Let&amp;rsquo;s start with an nmap to list the services open on the machine.
+sudo nmap -A -p- -Pn -T 5 yousef.vuln As we can see, there are two main services :
+   PORT Status Banner     22 OPEN OpenSSH 6.6.1p1   80 OPEN Apache http 2.</description>
+    </item>
     
     <item>
       <title>🇬🇧 Vulnhub writeup : Bellatrix</title>

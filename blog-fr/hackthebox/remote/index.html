@@ -24,7 +24,7 @@
         "datePublished": "2020-08-02 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-08-02 00:00:00 \x2b0000 UTC",
         "url" : "\/blog-fr\/hackthebox\/remote\/",
-        "wordCount" : "709",
+        "wordCount" : "729",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -67,7 +67,7 @@
 <meta itemprop="description" content="HackTheBox - Remote">
 <meta itemprop="datePublished" content="2020-08-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-08-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="709">
+<meta itemprop="wordCount" content="729">
 
 
 
@@ -297,6 +297,42 @@ function setTheme(mode) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-25'>
+                                    February 25, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a></h3>
                                 
                                 <time class="published" datetime=
@@ -324,7 +360,7 @@ function setTheme(mode) {
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -469,42 +505,6 @@ function setTheme(mode) {
 
         <a href="/blog-fr/binary/5-ret2win/" class="image featured">
             <img src="/img//binary/5-ret2win-binary.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-14'>
-                                    September 14, 2020</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
         </a>
     
 
@@ -740,7 +740,7 @@ msf5 exploit(windows/http/umbraco_upload_aspx) &gt; show options
 ~ ヤマト» sudo showmount -e 10.10.10.180
 Export list for 10.10.10.180:
 /site_backups (everyone)
-</code></pre><p>Il y a un dossier <code>/site_backups</code> accéssible à tout le monde.<br>
+</code></pre><p>Il y a un dossier <code>/site_backups</code> accessible pour tout le monde.<br>
 Il suffit de le monter.</p>
 <pre><code class="language-bash/shell" data-lang="bash/shell">HTB/remote ヤマト» mkdir site_backups
 HTB/remote ヤマト» sudo mount -o hard,nolock 10.10.10.180:/site_backups site_backups 
@@ -758,7 +758,7 @@ User &quot;admin&quot; &lt;admin@htb.local&gt;192.168.195.1User &quot;admin&quot
 <li>smith</li>
 <li>ssmith</li>
 </ul>
-<p>EN faisant un grep sur admin on tombe sur un hash en SHA1.</p>
+<p>En faisant un grep sur admin on tombe sur un hash en SHA1.</p>
 <pre><code class="language-bash/shell" data-lang="bash/shell">Administratoradmindefaulten-USb22924d5-57de-468e-9df4-0961cf6aa30d
 Administratoradminb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm&quot;:&quot;SHA1&quot;}en-USf8512f97-cab1-4a4b-a49f-0a2054c47a1d
 adminadmin@htb.localb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm&quot;:&quot;SHA1&quot;}admin@htb.localen-USfeb1a998-d3bf-406a-b30b-e269d7abdf50
@@ -766,7 +766,7 @@ adminadmin@htb.localb8be16afba8c314ad33d812f22a04991b90e2aaa{&quot;hashAlgorithm
 </code></pre><p>On va essayé de le craquer.
 PS : Les deux autres utilisateurs on un hash en SHA256.</p>
 <p>Admin hash : <code>b8be16afba8c314ad33d812f22a04991b90e2aaa</code></p>
-<p>Utilisons hash-identifier pour être sûr.</p>
+<p>Utilisons hash-identifier pour en être sûr.</p>
 <p><img src="/img/writeup/remote/hash-identifier.png" alt="hash-identifier"></p>
 <p>Pour cracker le hash : <a href="https://sha1.gromweb.com/?hash=b8be16afba8c314ad33d812f22a04991b90e2aaa">https://sha1.gromweb.com/?hash=b8be16afba8c314ad33d812f22a04991b90e2aaa</a></p>
 <p>Le mot de passe est : <code>baconandcheese</code></p>
@@ -824,6 +824,7 @@ pass : <code>!R3m0te!</code></p>
 <code>C:/Users/Administrator/Desktop/root.txt</code></p>
 <p>flag:<code>e6637b36871bed4041ce7fa150c22b68</code></p>
 <p>Voila, c'était ma première machine sous Windows !</p>
+<p>PLus complexe que des linux car il faut utiliser des outils différent mais ça reste une bonne expérience !</p>
 
   </div>
 
@@ -1003,6 +1004,44 @@ pass : <code>!R3m0te!</code></p>
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-25'>
+                February 25, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a>
               </h3>
               
@@ -1031,7 +1070,7 @@ pass : <code>!R3m0te!</code></p>
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -1190,44 +1229,6 @@ pass : <code>!R3m0te!</code></p>
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-14'>
-                September 14, 2020
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
       </div>
 
       
@@ -1370,6 +1371,17 @@ pass : <code>!R3m0te!</code></p>
           <article>
             <header>
               
+                <a href="/categories/vulnhub/">vulnhub</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="/categories/android/">android</a>
                 <span style="float:right;">1</span>
               
@@ -1404,17 +1416,6 @@ pass : <code>!R3m0te!</code></p>
             <header>
               
                 <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/vulnhub/">vulnhub</a>
                 <span style="float:right;">1</span>
               
             </header>

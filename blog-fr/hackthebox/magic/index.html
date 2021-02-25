@@ -24,7 +24,7 @@
         "datePublished": "2020-08-03 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-08-03 00:00:00 \x2b0000 UTC",
         "url" : "\/blog-fr\/hackthebox\/magic\/",
-        "wordCount" : "951",
+        "wordCount" : "980",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -67,7 +67,7 @@
 <meta itemprop="description" content="HackTheBox">
 <meta itemprop="datePublished" content="2020-08-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-08-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="951">
+<meta itemprop="wordCount" content="980">
 
 
 
@@ -297,6 +297,42 @@ function setTheme(mode) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-25'>
+                                    February 25, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a></h3>
                                 
                                 <time class="published" datetime=
@@ -324,7 +360,7 @@ function setTheme(mode) {
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -469,42 +505,6 @@ function setTheme(mode) {
 
         <a href="/blog-fr/binary/5-ret2win/" class="image featured">
             <img src="/img//binary/5-ret2win-binary.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-14'>
-                                    September 14, 2020</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
         </a>
     
 
@@ -724,13 +724,13 @@ Une page de <strong>login</strong> est accessible à cette adresse : <code>http:
 <p><img src="/img/writeup/magic/upload.png" alt="upload"></p>
 <p>Nous avons maintenant accès à la page <code>upload.php</code> qui nous permet d&rsquo;upload une image dans la galerie. On va tester ça avec une simple image.</p>
 <p>Notre image ce trouve à l&rsquo;adresse suivante : <code>http://10.10.10.185/images/uploads/luffy.png</code></p>
-<p>Maintenant, essayons en changeant l&rsquo;extension par <code>luffy.php.png</code>.</p>
+<p>Maintenant, essayons de changer l&rsquo;extension par <code>luffy.php.png</code>.</p>
 <p><img src="/img/writeup/magic/php_png.png" alt="php_png"></p>
-<p>Il est donc possible d&rsquo;upload des image en <code>php.png</code> sans contrainte et ensuite de les afficher, maintenant essayons en y ajoutant un webshell php.</p>
+<p>Il est donc possible d&rsquo;upload des images en <code>php.png</code> sans contrainte et ensuite de les afficher, maintenant essayons en y ajoutant un webshell php.</p>
 <p><a href="https://github.com/artyuum/Simple-PHP-Web-Shell/blob/master/index.php">https://github.com/artyuum/Simple-PHP-Web-Shell/blob/master/index.php</a></p>
-<p>BON ca ne fonctionne pas très bien avec seulement du PHP.</p>
+<p>Bon, ca ne fonctionne pas très bien avec seulement du PHP.</p>
 <p><img src="/img/writeup/magic/erro.png" alt="Erro"></p>
-<p>Je pense qu&rsquo;il y a une lecture du fichier et si un caractère du style &ldquo;&lt;&rdquo; se trouve dans le fichier, il y a une exeption.</p>
+<p>Je pense qu&rsquo;il y a une lecture du fichier et si un caractère du style &ldquo;&lt;&rdquo; se trouve dans le fichier, il y a une exception.</p>
 <p>J&rsquo;ai pu faire un test avec un simple fichier <code>hello.php.png</code> qui contient seulement <code>&lt;H1&gt;Hello&lt;/H1&gt;</code> celui-ci retourne la même erreur.</p>
 <p>Et si je mettais mon code PHP à la fin de mon image ?</p>
 <p>Effectivement, ca fonctionne en laissant l&rsquo;image comme elle est et en ajoutant notre webshell à la fin.</p>
@@ -767,7 +767,7 @@ theseus
 
    order deny,allow
    deny from all
-</code></pre></div><p>Un fichier <code>.htaccess</code> mais qui ne nous apprends rien.</p>
+</code></pre></div><p>Un fichier <code>.htaccess</code> mais qui ne nous apprend rien.</p>
 <h2 id="changement-de-webshell">Changement de webshell</h2>
 <p>Ok après réflexion, j&rsquo;ai changé de webshell et le résultat est beaucoup mieux , j&rsquo;ai repris le premier webshell.</p>
 <p><img src="/img/writeup/magic/db_php5.png" alt="db_php5">
@@ -776,9 +776,9 @@ Je peux maintenant voir le fichier <strong>db.php5</strong> en entier.</p>
 <p>J&rsquo;ai un login et un mdp :</p>
 <ul>
 <li>login : <code>theseus</code></li>
-<li>mdp : <code>iamkingtheseus</code><br>
-SSH ne fonctionne pas, problème de clé publique.</li>
+<li>mdp : <code>iamkingtheseus</code></li>
 </ul>
+<p>SSH ne fonctionne pas, problème de clé publique.</p>
 <h2 id="road-to-user">Road to USER</h2>
 <p>Bon, je vais essayé d&rsquo;avoir un meilleur shell en utilisant <code>nc</code>.</p>
 <p>J&rsquo;ai fait une copie du binaire dans un dossier puis j&rsquo;ai ensuite démarrer un serveur python pour pouvoir y accéder à distance.</p>
@@ -792,7 +792,7 @@ SSH ne fonctionne pas, problème de clé publique.</li>
 <p><img src="/img/writeup/magic/mysql.png" alt="mysql"></p>
 <p>En faisant un <code>ls /usr/bin/mysql*</code> on peut voir d&rsquo;autre binaire mysql.</p>
 <p>Un petit tuto <a href="https://www.geek-directeur-technique.com/2017/07/17/utilisation-de-mysqldump">ICI</a> pour utiliser  <code>mysqldump</code>.</p>
-<p>Je me suis intéréssé à ce binaire car je cherche ç faire un dump de la base de donnée avec les creds que j&rsquo;ai trouvé dans <code>db.php5</code>.</p>
+<p>Je me suis intéréssé à ce binaire car je cherche à faire un dump de la base de donnée avec les creds que j&rsquo;ai trouvé dans <code>db.php5</code>.</p>
 <p>Avec la commande : <code>mysqldump -u theseus -p Magic &gt; /tmp/base.sql</code></p>
 <p>On peut récupérer la base de donnée <strong>base.sql</strong> dans <code>/tmp</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> <span style="color:#75715e">/*!40000 ALTER TABLE `login` DISABLE KEYS */</span>;
@@ -803,7 +803,7 @@ SSH ne fonctionne pas, problème de clé publique.</li>
 <p>J&rsquo;en ai profité pour mettre ma clé publique SSH dans le fichier <code>.ssh/autorized_keys</code> afin d&rsquo;avoir un accés SSH à tout moment.</p>
 <h2 id="road-to-root">Road to ROOT</h2>
 <p>On va refaire une énumération mais cette fois en utilisant <a href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh">LinEnum</a></p>
-<p>A première vue, rien ne me saute au yeux dans le rapport <strong>linenum</strong>.</p>
+<p>A première vue, rien ne me saute aux yeux dans le rapport <strong>linenum</strong>.</p>
 <h2 id="suid">SUID</h2>
 <p>Après avoir quelques heures d'énumération, je décide de regarder les binaire exploitable avec la commande <code> find / -type f \( -perm -4000 -o -perm -2000 \) -exec ls -l {} \;</code></p>
 <pre><code class="language-bash/shell" data-lang="bash/shell">-rwsr-xr-x 1 root root 26696 Jan  8  2020 /bin/umount
@@ -824,7 +824,7 @@ Le binaire <code>/bin/sysinfo</code> appartient aussi au groupe <strong>users</s
 </ul>
 <p>Mais après quelques tentatives, j&rsquo;ai abandonné l&rsquo;idée d&rsquo;utiliser une CVE.</p>
 <h2 id="path-exploit">PATH exploit</h2>
-<p>En regardant de plus près, le binaire <code>sysinfo</code> executer une commande familière.</p>
+<p>En regardant de plus près, le binaire <code>sysinfo</code> execute une commande familière.</p>
 <p><img src="/img/writeup/magic/free.png" alt="free"></p>
 <p>L&rsquo;output ressemble beaucoup à la commande <code>free</code>.</p>
 <p>L&rsquo;idée serait de faire executer une fausse commande <code>free</code> à <code>sysinfo</code> afin de faire executer une commande au compte <strong>root</strong>.</p>
@@ -835,6 +835,8 @@ Le binaire <code>/bin/sysinfo</code> appartient aussi au groupe <strong>users</s
 Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça c&rsquo;est ici que le système va cherche des binaires en premier.</p>
 <p><img src="/img/writeup/magic/nc_root.png" alt="nc_root"></p>
 <p>BINGO nous voila avec un accès <strong>ROOT</strong> !</p>
+<p>Une box assez complexe pour mon niveau c&rsquo;est pourquoi j&rsquo;y ai passé beaucoup plus de temps que les autres.<br>
+Mais finalement j&rsquo;ai pu apprendre pas mal de choses !</p>
 
   </div>
 
@@ -1014,6 +1016,44 @@ Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-25'>
+                February 25, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a>
               </h3>
               
@@ -1042,7 +1082,7 @@ Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -1201,44 +1241,6 @@ Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-14'>
-                September 14, 2020
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
       </div>
 
       
@@ -1381,6 +1383,17 @@ Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça
           <article>
             <header>
               
+                <a href="/categories/vulnhub/">vulnhub</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="/categories/android/">android</a>
                 <span style="float:right;">1</span>
               
@@ -1415,17 +1428,6 @@ Il faut mettre le <code>/tmp</code> au début du <strong>PATH</strong> comme ça
             <header>
               
                 <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/vulnhub/">vulnhub</a>
                 <span style="float:right;">1</span>
               
             </header>

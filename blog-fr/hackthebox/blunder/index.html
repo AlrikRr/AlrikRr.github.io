@@ -24,7 +24,7 @@
         "datePublished": "2020-07-30 00:00:00 \x2b0000 UTC",
         "dateModified" : "2020-07-30 00:00:00 \x2b0000 UTC",
         "url" : "\/blog-fr\/hackthebox\/blunder\/",
-        "wordCount" : "832",
+        "wordCount" : "859",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -67,7 +67,7 @@
 <meta itemprop="description" content="HackTheBox - Blunder">
 <meta itemprop="datePublished" content="2020-07-30T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="832">
+<meta itemprop="wordCount" content="859">
 
 
 
@@ -297,6 +297,42 @@ function setTheme(mode) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-25'>
+                                    February 25, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a></h3>
                                 
                                 <time class="published" datetime=
@@ -324,7 +360,7 @@ function setTheme(mode) {
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -475,42 +511,6 @@ function setTheme(mode) {
 
                         </article>
                 
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-14'>
-                                    September 14, 2020</time>
-                            </header>
-                            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
-        </a>
-    
-
-
-                        </article>
-                
 
                 
                     <a href=
@@ -606,7 +606,7 @@ function setTheme(mode) {
             July 30, 2020</time>
         <span class="author">AlrikRr</span>
         
-            <p>4 minute read</p>
+            <p>5 minute read</p>
         
         
     </div>
@@ -723,12 +723,12 @@ function setTheme(mode) {
 ftp: connect: Connection refused
 ftp&gt; 
 </code></pre><p>Bon apparemment non.<br>
-ALlons regarder le site web de plus près.</p>
+Allons regarder le site web de plus près.</p>
 <h2 id="site-web">Site Web</h2>
 <p>A première vue, il n&rsquo;y a rien de très intéressant, je vais utiliser <code>dirb</code> pour trouver des pages &ldquo;cachées&rdquo;.<br>
 J&rsquo;utilise la wordlist <code>medium.txt</code>.</p>
 <p><img src="/img/writeup/blunder/dirb.png" alt="dirb"></p>
-<p>A première vu ca ressamble à un CMS, on va regarder les CVE du CMS mais avant ça il me faut le nom du CMS.</p>
+<p>A première vu ca ressemble à un CMS, on va regarder les CVE mais avant ça il me faut le nom du CMS.</p>
 <p><code>http://10.10.10.191/admin/ </code></p>
 <p><strong>BLUDIT</strong></p>
 <p>Après quelques recherches de CVE je suis tombé sur ce github : <a href="https://github.com/pingport80/CVE-2019-17240">pingport80/CVE-2019-17240</a></p>
@@ -740,13 +740,14 @@ J&rsquo;utilise la wordlist <code>medium.txt</code>.</p>
 <p><img src="/img/writeup/blunder/searchsploit.png" alt="searchploit"></p>
 <h2 id="petite-pause">Petite Pause</h2>
 <p>Bon reprenons, je suis sur qu&rsquo;il nous faut utiliser un exploit CVE mais pour ça il nous faut d&rsquo;abord un LOGIN et un MOT DE PASSE pour l&rsquo;utiliser.</p>
-<p>Je suis allé faire un tour sur le forum HackTheBo pour avoir quelques HINTS.</p>
+<p>Je suis allé faire un tour sur le forum HackTheBox pour avoir quelques HINTS.</p>
 <p>Il y aurait un fichier texte important à trouver.</p>
 <p>Pour ça, j&rsquo;utilise <code>WFUZZ</code>.</p>
 <p>Je prends direct la wordlist <strong>BIG</strong>.</p>
 <p><code>wfuzz -c -w /usr/share/wfuzz/wordlist/general/big.txt --hc 404,403 -u &quot;http://10.10.10.191/FUZZ.txt&quot; -t 100 </code></p>
 <p><img src="/img/writeup/blunder/wfuzz.png" alt="wfuzz"></p>
 <p>BINGO il y a une fichier <code>todo.txt</code> !</p>
+<p>Ca m&rsquo;apprendra, la prochaine fois j&rsquo;utilise la plus grosse wordlist !</p>
 <pre><code>-Update the CMS
 -Turn off FTP - DONE
 -Remove old users - DONE
@@ -759,14 +760,14 @@ J&rsquo;utilise la wordlist <code>medium.txt</code>.</p>
 <h2 id="wordlist">Wordlist</h2>
 <p>Après avoir essayé toutes les wordlists possible, je suis tombé sur l&rsquo;outil <code>cewl</code> qui permet de générer une wordlist personnalisé.</p>
 <p><code>$ cewl -w dl_wordlists.txt -d 10 -m 1 http://10.10.10.191/</code></p>
-<p><strong>Pas moyn de faire fonctionne le script du lien précédent, je reprends BRUTE</strong></p>
+<p><strong>Pas moyen de faire fonctionne le script du lien précédent, je reprends BRUTE</strong></p>
 <p><code>python3 brute.py -u http://10.10.10.191/ -user fergus -w ~/Documents/HTB/blunder/dl_wordlist.txt</code></p>
 <p>TROUVE !</p>
 <p><code>fergus : RolandDeschain  ==&gt;found</code></p>
 <h2 id="msf">MSF</h2>
 <p>Maintenant que j&rsquo;ai un login et un mot de passe, je peux tester l&rsquo;exploit de la CVE avec msfconsole.</p>
 <p><img src="/img/writeup/blunder/msf.png" alt="msf"></p>
-<p>J&rsquo;ai du m&rsquo;y reprendre à deux fois car j&rsquo;avais oublié de set le PAyload avec mon IP VPN.</p>
+<p>J&rsquo;ai du m&rsquo;y reprendre à deux fois car j&rsquo;avais oublié de set le Payload avec mon IP VPN.</p>
 <p>Cet exploit me permet d&rsquo;avoir un shell sur la machine. ENFIN !</p>
 <h2 id="shell">Shell</h2>
 <p>En fouillant <code>/var/www/bludit-3.9.2/bl-content/databases</code> on se retrouve avec pleins de fichiers php.</p>
@@ -810,6 +811,7 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
 <p>Du coup il suffit de taper cette commande :
 <code>sudo -u#-1 /bin/bash</code></p>
 <p>Nous voila root !</p>
+<p>Une box très cool qui demande de pousser un peu l'énumération, encore faut-il utiliser les bonnes wordlist !</p>
 
   </div>
 
@@ -989,6 +991,44 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
           <article class="mini-post">
             <header>
               <h3>
+                <a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-25'>
+                February 25, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
                 <a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a>
               </h3>
               
@@ -1017,7 +1057,7 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
         
 
         <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
-            <img src="/img//vulnhub/bellatrix/banner.gif" alt="">
+            <img src="/img//vulnhub/banner.gif" alt="">
         </a>
     
 
@@ -1176,44 +1216,6 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <h3>
-                <a href="/blog-fr/archlinux/arch-postinstall/">🇫🇷  Archlinux Post-Install !</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-14'>
-                September 14, 2020
-              </time>
-            </header>
-            
-    
-
-    
-        
-        
-
-
-
-
-
-
-
-  
-
-
-        
-        
-        
-
-        <a href="/blog-fr/archlinux/arch-postinstall/" class="image featured">
-            <img src="/img//arch/arch-post/arch-banner.png" alt="">
-        </a>
-    
-
-
-          </article>
-        
       </div>
 
       
@@ -1356,6 +1358,17 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
           <article>
             <header>
               
+                <a href="/categories/vulnhub/">vulnhub</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
                 <a href="/categories/android/">android</a>
                 <span style="float:right;">1</span>
               
@@ -1390,17 +1403,6 @@ uid=1001(hugo) gid=1001(hugo) groups=1001(hugo)
             <header>
               
                 <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
-                <span style="float:right;">1</span>
-              
-            </header>
-          </article>
-        </p>
-        
-        <p>
-          <article>
-            <header>
-              
-                <a href="/categories/vulnhub/">vulnhub</a>
                 <span style="float:right;">1</span>
               
             </header>
