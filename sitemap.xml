@@ -4,16 +4,31 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog-en/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <loc>/blog-fr/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/fr-tuto/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog-fr/tuto-fr/cuckoo-installation/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog-en/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -60,11 +75,6 @@
   <url>
     <loc>/projects/formationnixos/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog-fr/</loc>
-    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -128,12 +138,7 @@
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/pop-os-installation-btrfs/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tuto/</loc>
+    <loc>/blog-fr/tuto-fr/pop-os-installation-btrfs/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -198,17 +203,17 @@
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/coffre-securise-sshfs/</loc>
+    <loc>/blog-fr/tuto-fr/coffre-securise-sshfs/</loc>
     <lastmod>2020-06-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/macos-sur-linux-kvm/</loc>
+    <loc>/blog-fr/tuto-fr/macos-sur-linux-kvm/</loc>
     <lastmod>2020-06-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/ssh-expert-tips/</loc>
+    <loc>/blog-fr/tuto-fr/ssh-expert-tips/</loc>
     <lastmod>2020-06-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -223,7 +228,7 @@
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/dropbear-initramfs/</loc>
+    <loc>/blog-fr/tuto-fr/dropbear-initramfs/</loc>
     <lastmod>2020-06-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -238,7 +243,7 @@
   </url>
   
   <url>
-    <loc>/blog-fr/tuto/creer-son-blog-avec-hugo/</loc>
+    <loc>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</loc>
     <lastmod>2020-06-21T15:47:56+02:00</lastmod>
   </url>
   

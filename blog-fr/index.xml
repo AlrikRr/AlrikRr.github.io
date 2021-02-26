@@ -6,10 +6,21 @@
     <description>Recent content in Blog-fr on AlrikRr-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog-fr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Procédure d&#39;installation cuckoo</title>
+      <link>/blog-fr/tuto-fr/cuckoo-installation/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/tuto-fr/cuckoo-installation/</guid>
+      <description>Hello ! Ca faisait longtemps que je n&amp;rsquo;avais pas fait de petit tutoriel sur mon blog !
+Aujourd&amp;rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&amp;rsquo;analyse dynamique sur une machine Windows 7 !
+INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour et virtualbox 6.1. Il se peut que vous ayez des problèmes de version suivant les paquets que vous allez installer.</description>
+    </item>
     
     <item>
       <title>🇫🇷  #2 P4wnP1:ALOA RubberDucky</title>
@@ -88,10 +99,10 @@ Pourquoi ?  Faire crash une application (un DOS) Avoir un shell avec des droits 
     
     <item>
       <title>Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
-      <link>/blog-fr/tuto/pop-os-installation-btrfs/</link>
+      <link>/blog-fr/tuto-fr/pop-os-installation-btrfs/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog-fr/tuto/pop-os-installation-btrfs/</guid>
+      <guid>/blog-fr/tuto-fr/pop-os-installation-btrfs/</guid>
       <description>Hello !
 Dans ce tuto nous allons voir comment installer Pop_OS! 20.04 avec :
  Chiffrement LUKS LVM EFI BTRFS Backup BTRFS  Pour la réalisation de ce tutoriel, j&amp;rsquo;ai repris la vidéo de Will Mutschler disponible ici : Pop! OS 20.04 BTRFS-LUKS install guide, Ubuntu style subvolumes, easy system snapshots &amp;amp; rollback
@@ -201,10 +212,10 @@ Bon tuto ;)
     
     <item>
       <title>Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
-      <link>/blog-fr/tuto/coffre-securise-sshfs/</link>
+      <link>/blog-fr/tuto-fr/coffre-securise-sshfs/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog-fr/tuto/coffre-securise-sshfs/</guid>
+      <guid>/blog-fr/tuto-fr/coffre-securise-sshfs/</guid>
       <description>Les Scripts ! Comme je le disais dans la première partie, vous devez avoir une autre machine accessible via SSH sans mot de passe pour la suite.
 Donc, que vont faire nos scripts ?
  Disons que votre COFFRE est dans la machine @vault Vous voulez accéder à votre COFFRE depuis votre machine @client avec SSHFS Nous allons créer déjà 2 scripts en local dans @vault (montage &amp;amp; démontage) Ensuite, nous allons créer 2 autres scripts dans @client (remote_montage &amp;amp; remote_démontage)  Vous allez comprendre avec les scripts :)</description>
@@ -212,10 +223,10 @@ Donc, que vont faire nos scripts ?
     
     <item>
       <title>Installation de MacOS sur Linux avec KVM</title>
-      <link>/blog-fr/tuto/macos-sur-linux-kvm/</link>
+      <link>/blog-fr/tuto-fr/macos-sur-linux-kvm/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog-fr/tuto/macos-sur-linux-kvm/</guid>
+      <guid>/blog-fr/tuto-fr/macos-sur-linux-kvm/</guid>
       <description>Comment installer MacOS Catalina sur votre Linux avec KVM.
 Merci a foxlet pour son tutoriel disponible ici : foxlet/macOS-Simple-KVM
  Requirements Premièrement, vous allez devoir installer QEMU (3.1&amp;gt;=), Python3 et pip. Il n&amp;rsquo;est pas necessaire d&amp;rsquo;avoir un ISO MacOs pour cette installation. C&amp;rsquo;est un avantage :)
@@ -225,20 +236,20 @@ Pour avoir plus d&amp;rsquo;information, je vous conseil de regarder le lient ve
     
     <item>
       <title>Maîtrisez SSH comme jamais !</title>
-      <link>/blog-fr/tuto/ssh-expert-tips/</link>
+      <link>/blog-fr/tuto-fr/ssh-expert-tips/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog-fr/tuto/ssh-expert-tips/</guid>
+      <guid>/blog-fr/tuto-fr/ssh-expert-tips/</guid>
       <description>Génération de clés # Générer vos clés Publique et Privée ~ 竈門» shh-keygen -t &amp;lt;algorithm&amp;gt; ed25519 est recommandé mais certaines applications ne support pas cet alogithme,je vous conseil de créer 2 clés, une en ed25519 et une en RSA.
 Les clés que vous veneez de créer ont pour répertoire par défault : ~/.ssh Il n&amp;rsquo;est pas nécessaire de mettre une pass-pharse, si vous voulez en mettre une vous pouvez mais elle vous sera demandée à chaque connexion.</description>
     </item>
     
     <item>
       <title>Installation de Dropbear-initramfs</title>
-      <link>/blog-fr/tuto/dropbear-initramfs/</link>
+      <link>/blog-fr/tuto-fr/dropbear-initramfs/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog-fr/tuto/dropbear-initramfs/</guid>
+      <guid>/blog-fr/tuto-fr/dropbear-initramfs/</guid>
       <description>Le principal problème quand on a un serveur chiffré, c&amp;rsquo;est au moment du redémarrage de celui-ci, il faut être présent pour entrer la pass-phrase et ainsi démarrer sont serveur.
 Du moins, c&amp;rsquo;est ce que vous devriez faire si vous n&amp;rsquo;avait pas installer dropbear-initramfs !
 Dropbear-initramf est un petit serveur SSH qui va tourner juste après votre GRUB et avant que votre machine ne démarre. De ce fait, vous pourrez vous y connecter et entrer la pass-phrase de votre serveur !</description>
@@ -261,10 +272,10 @@ Génération des clés Vous devez créer des clés Privéd/Publique pour votre s
     
     <item>
       <title>Créer son site web avec Github-page et Hugo</title>
-      <link>/blog-fr/tuto/creer-son-blog-avec-hugo/</link>
+      <link>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</link>
       <pubDate>Sun, 21 Jun 2020 15:47:56 +0200</pubDate>
       
-      <guid>/blog-fr/tuto/creer-son-blog-avec-hugo/</guid>
+      <guid>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</guid>
       <description>Vous avez besoin d&amp;rsquo;un site web static rapidement, pas de quoi dépenser pour heberger ? Vous avez frapper à la bonne porte.
 Ici je vais vous monter comment installer et configurer votre site web avec Hugo server.
 Ce tutoriel fonctionne également sous MacOS.
