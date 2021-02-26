@@ -8,12 +8,22 @@
   </url>
   
   <url>
+    <loc>/blog-en/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog-fr/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/en-tuto/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,8 +38,8 @@
   </url>
   
   <url>
-    <loc>/blog-en/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+    <loc>/blog-en/tuto-en/cuckoo-install/</loc>
+    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -188,17 +198,17 @@
   </url>
   
   <url>
-    <loc>/blog-fr/secu/analyse-dynamique-android/</loc>
-    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/android/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/s%C3%A9curit%C3%A9/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog-fr/secu/analyse-dynamique-android/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -278,12 +288,12 @@
   </url>
   
   <url>
-    <loc>/blog-fr/ml/support-vector-machine/</loc>
+    <loc>/blog-fr/nixos/install-nixos/</loc>
     <lastmod>2020-06-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog-fr/nixos/install-nixos/</loc>
+    <loc>/blog-fr/ml/support-vector-machine/</loc>
     <lastmod>2020-06-19T00:00:00+00:00</lastmod>
   </url>
   

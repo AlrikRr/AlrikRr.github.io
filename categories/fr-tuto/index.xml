@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Procédure d&#39;installation cuckoo</title>
+      <title>🇫🇷  Procédure d&#39;installation cuckoo</title>
       <link>/blog-fr/tuto-fr/cuckoo-installation/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -23,7 +23,7 @@ INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour
     </item>
     
     <item>
-      <title>Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
+      <title>🇫🇷  Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
       <link>/blog-fr/tuto-fr/pop-os-installation-btrfs/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@ Si vous voulez, vous pouvez utilisez sa vidéo (EN) qui sera plus explicative qu
     </item>
     
     <item>
-      <title>Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
+      <title>🇫🇷  Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
       <link>/blog-fr/tuto-fr/coffre-securise-sshfs/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -46,7 +46,7 @@ Donc, que vont faire nos scripts ?
     </item>
     
     <item>
-      <title>Installation de MacOS sur Linux avec KVM</title>
+      <title>🇫🇷  Installation de MacOS sur Linux avec KVM</title>
       <link>/blog-fr/tuto-fr/macos-sur-linux-kvm/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -59,7 +59,7 @@ Pour avoir plus d&amp;rsquo;information, je vous conseil de regarder le lient ve
     </item>
     
     <item>
-      <title>Maîtrisez SSH comme jamais !</title>
+      <title>🇫🇷  Maîtrisez SSH comme jamais !</title>
       <link>/blog-fr/tuto-fr/ssh-expert-tips/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -69,7 +69,7 @@ Les clés que vous veneez de créer ont pour répertoire par défault : ~/.ssh I
     </item>
     
     <item>
-      <title>Installation de Dropbear-initramfs</title>
+      <title>🇫🇷  Installation de Dropbear-initramfs</title>
       <link>/blog-fr/tuto-fr/dropbear-initramfs/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -80,7 +80,7 @@ Dropbear-initramf est un petit serveur SSH qui va tourner juste après votre GRU
     </item>
     
     <item>
-      <title>Créer son site web avec Github-page et Hugo</title>
+      <title>🇫🇷  Créer son site web avec Github-page et Hugo</title>
       <link>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</link>
       <pubDate>Sun, 21 Jun 2020 15:47:56 +0200</pubDate>
       

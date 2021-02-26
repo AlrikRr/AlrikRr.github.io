@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Procédure d&#39;installation cuckoo</title>
+      <title>🇫🇷  Procédure d&#39;installation cuckoo</title>
       <link>/blog-fr/tuto-fr/cuckoo-installation/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -20,6 +20,18 @@
       <description>Hello ! Ca faisait longtemps que je n&amp;rsquo;avais pas fait de petit tutoriel sur mon blog !
 Aujourd&amp;rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&amp;rsquo;analyse dynamique sur une machine Windows 7 !
 INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour et virtualbox 6.1. Il se peut que vous ayez des problèmes de version suivant les paquets que vous allez installer.</description>
+    </item>
+    
+    <item>
+      <title>🇬🇧  How to install Cuckoo sandbox</title>
+      <link>/blog-en/tuto-en/cuckoo-install/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/tuto-en/cuckoo-install/</guid>
+      <description>Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
+Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 7 machine!
+INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.
+ Before continuing Before continuing, please be aware that cuckoo&amp;rsquo;s technical documentation is very complete and can help you in case of problems.</description>
     </item>
     
     <item>
@@ -173,7 +185,7 @@ Pourquoi ?  Faire crash une application (un DOS) Avoir un shell avec des droits 
     </item>
     
     <item>
-      <title>Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
+      <title>🇫🇷  Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
       <link>/blog-fr/tuto-fr/pop-os-installation-btrfs/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -272,7 +284,7 @@ Il est vivement conseiller d&amp;rsquo;avoir fait cette machine avant de lire ce
     </item>
     
     <item>
-      <title>Analyse dynamique android avec proxy et SSL pinning bypass</title>
+      <title>🇫🇷  Analyse dynamique android avec proxy et SSL pinning bypass</title>
       <link>/blog-fr/secu/analyse-dynamique-android/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -286,7 +298,7 @@ Bon tuto ;)
     </item>
     
     <item>
-      <title>Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
+      <title>🇫🇷  Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
       <link>/blog-fr/tuto-fr/coffre-securise-sshfs/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -297,7 +309,7 @@ Donc, que vont faire nos scripts ?
     </item>
     
     <item>
-      <title>Installation de MacOS sur Linux avec KVM</title>
+      <title>🇫🇷  Installation de MacOS sur Linux avec KVM</title>
       <link>/blog-fr/tuto-fr/macos-sur-linux-kvm/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -310,7 +322,7 @@ Pour avoir plus d&amp;rsquo;information, je vous conseil de regarder le lient ve
     </item>
     
     <item>
-      <title>Maîtrisez SSH comme jamais !</title>
+      <title>🇫🇷  Maîtrisez SSH comme jamais !</title>
       <link>/blog-fr/tuto-fr/ssh-expert-tips/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -320,7 +332,7 @@ Les clés que vous veneez de créer ont pour répertoire par défault : ~/.ssh I
     </item>
     
     <item>
-      <title>Installation de Dropbear-initramfs</title>
+      <title>🇫🇷  Installation de Dropbear-initramfs</title>
       <link>/blog-fr/tuto-fr/dropbear-initramfs/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -360,7 +372,7 @@ $ vim /etc/nixos/wireguard.nix Generate keys You need to creat a bunch of public
     </item>
     
     <item>
-      <title>Créer son site web avec Github-page et Hugo</title>
+      <title>🇫🇷  Créer son site web avec Github-page et Hugo</title>
       <link>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</link>
       <pubDate>Sun, 21 Jun 2020 15:47:56 +0200</pubDate>
       
@@ -436,19 +448,6 @@ It is recommended to understand the configuration file before pasting it supidly
     </item>
     
     <item>
-      <title>Support Vector Machine</title>
-      <link>/blog-fr/ml/support-vector-machine/</link>
-      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog-fr/ml/support-vector-machine/</guid>
-      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
-Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
- Premièrement, vous devez connaitre la base d&amp;rsquo;un Hyperplan, c&amp;rsquo;est assez important pour le SVM.
- distance entre l&amp;rsquo;Hyperplan et les datapoints
-Comment un Hyperplan est tracé ?</description>
-    </item>
-    
-    <item>
       <title>🇫🇷  Installation de NixOS - Débutant</title>
       <link>/blog-fr/nixos/install-nixos/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
@@ -461,6 +460,19 @@ N&amp;rsquo;hésitez pas à jeter un oeil au wiki ici : nixos.org
 Installation Si vous rencontrez des problèmes, Google est votre ami
 Pour cette installation, j&amp;rsquo;utilise un Disk Virtuel de 25GB.
 # Afficher l&#39;aide NIXOS - Commande très importante !</description>
+    </item>
+    
+    <item>
+      <title>🇫🇷  Support Vector Machine</title>
+      <link>/blog-fr/ml/support-vector-machine/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/ml/support-vector-machine/</guid>
+      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
+Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
+ Premièrement, vous devez connaitre la base d&amp;rsquo;un Hyperplan, c&amp;rsquo;est assez important pour le SVM.
+ distance entre l&amp;rsquo;Hyperplan et les datapoints
+Comment un Hyperplan est tracé ?</description>
     </item>
     
     <item>
@@ -478,7 +490,7 @@ For this install, I used a Virtual Disk of 25GiB.</description>
     </item>
     
     <item>
-      <title>K-plus proches voisins - KNN</title>
+      <title>🇫🇷  K-plus proches voisins - KNN</title>
       <link>/blog-fr/ml/k-nearest-neighbors/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -491,7 +503,7 @@ Méthode &amp;ldquo;humain&amp;rdquo; : Si vous êtes un humain, enfin, je l&amp
     </item>
     
     <item>
-      <title>Régression linéaire</title>
+      <title>🇫🇷  Régression linéaire</title>
       <link>/blog-fr/ml/linear-regression/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
       

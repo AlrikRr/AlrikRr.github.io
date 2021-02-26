@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Procédure d&#39;installation cuckoo</title>
+      <title>🇫🇷  Procédure d&#39;installation cuckoo</title>
       <link>/blog-fr/tuto-fr/cuckoo-installation/</link>
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
@@ -98,7 +98,7 @@ Pourquoi ?  Faire crash une application (un DOS) Avoir un shell avec des droits 
     </item>
     
     <item>
-      <title>Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
+      <title>🇫🇷  Installation POP_OS! 20.04 LUKS EFI et BTRFS</title>
       <link>/blog-fr/tuto-fr/pop-os-installation-btrfs/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -197,7 +197,7 @@ Il est vivement conseiller d&amp;rsquo;avoir fait cette machine avant de lire ce
     </item>
     
     <item>
-      <title>Analyse dynamique android avec proxy et SSL pinning bypass</title>
+      <title>🇫🇷  Analyse dynamique android avec proxy et SSL pinning bypass</title>
       <link>/blog-fr/secu/analyse-dynamique-android/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -211,7 +211,7 @@ Bon tuto ;)
     </item>
     
     <item>
-      <title>Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
+      <title>🇫🇷  Mise en place d&#39;un coffre sécurisé avec montage distant SSHFS</title>
       <link>/blog-fr/tuto-fr/coffre-securise-sshfs/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -222,7 +222,7 @@ Donc, que vont faire nos scripts ?
     </item>
     
     <item>
-      <title>Installation de MacOS sur Linux avec KVM</title>
+      <title>🇫🇷  Installation de MacOS sur Linux avec KVM</title>
       <link>/blog-fr/tuto-fr/macos-sur-linux-kvm/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -235,7 +235,7 @@ Pour avoir plus d&amp;rsquo;information, je vous conseil de regarder le lient ve
     </item>
     
     <item>
-      <title>Maîtrisez SSH comme jamais !</title>
+      <title>🇫🇷  Maîtrisez SSH comme jamais !</title>
       <link>/blog-fr/tuto-fr/ssh-expert-tips/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -245,7 +245,7 @@ Les clés que vous veneez de créer ont pour répertoire par défault : ~/.ssh I
     </item>
     
     <item>
-      <title>Installation de Dropbear-initramfs</title>
+      <title>🇫🇷  Installation de Dropbear-initramfs</title>
       <link>/blog-fr/tuto-fr/dropbear-initramfs/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -271,7 +271,7 @@ Génération des clés Vous devez créer des clés Privéd/Publique pour votre s
     </item>
     
     <item>
-      <title>Créer son site web avec Github-page et Hugo</title>
+      <title>🇫🇷  Créer son site web avec Github-page et Hugo</title>
       <link>/blog-fr/tuto-fr/creer-son-blog-avec-hugo/</link>
       <pubDate>Sun, 21 Jun 2020 15:47:56 +0200</pubDate>
       
@@ -322,19 +322,6 @@ archlinux.iso est votre fichier ISO est sdb est votre clé USB.</description>
     </item>
     
     <item>
-      <title>Support Vector Machine</title>
-      <link>/blog-fr/ml/support-vector-machine/</link>
-      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog-fr/ml/support-vector-machine/</guid>
-      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
-Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
- Premièrement, vous devez connaitre la base d&amp;rsquo;un Hyperplan, c&amp;rsquo;est assez important pour le SVM.
- distance entre l&amp;rsquo;Hyperplan et les datapoints
-Comment un Hyperplan est tracé ?</description>
-    </item>
-    
-    <item>
       <title>🇫🇷  Installation de NixOS - Débutant</title>
       <link>/blog-fr/nixos/install-nixos/</link>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
@@ -350,7 +337,20 @@ Pour cette installation, j&amp;rsquo;utilise un Disk Virtuel de 25GB.
     </item>
     
     <item>
-      <title>K-plus proches voisins - KNN</title>
+      <title>🇫🇷  Support Vector Machine</title>
+      <link>/blog-fr/ml/support-vector-machine/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/ml/support-vector-machine/</guid>
+      <description>Si vous voulez un tutoriel plus complet, je vous recommande de suivre TechWithTim
+Je vais essayé d&amp;rsquo;expliquer très simplement avec mes mots, je ne suis pas un expert, ce tutoriel sera aussi bénéfique pour moi afin de bien comprendre la logique derrière cet algorithme.
+ Premièrement, vous devez connaitre la base d&amp;rsquo;un Hyperplan, c&amp;rsquo;est assez important pour le SVM.
+ distance entre l&amp;rsquo;Hyperplan et les datapoints
+Comment un Hyperplan est tracé ?</description>
+    </item>
+    
+    <item>
+      <title>🇫🇷  K-plus proches voisins - KNN</title>
       <link>/blog-fr/ml/k-nearest-neighbors/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -363,7 +363,7 @@ Méthode &amp;ldquo;humain&amp;rdquo; : Si vous êtes un humain, enfin, je l&amp
     </item>
     
     <item>
-      <title>Régression linéaire</title>
+      <title>🇫🇷  Régression linéaire</title>
       <link>/blog-fr/ml/linear-regression/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
       

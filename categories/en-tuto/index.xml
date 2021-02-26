@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>en-tuto on AlrikRr-Blog</title>
+    <link>/categories/en-tuto/</link>
+    <description>Recent content in en-tuto on AlrikRr-Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/en-tuto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🇬🇧  How to install Cuckoo sandbox</title>
+      <link>/blog-en/tuto-en/cuckoo-install/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-en/tuto-en/cuckoo-install/</guid>
+      <description>Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
+Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 7 machine!
+INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.
+ Before continuing Before continuing, please be aware that cuckoo&amp;rsquo;s technical documentation is very complete and can help you in case of problems.</description>
+    </item>
+    
+  </channel>
+</rss>
