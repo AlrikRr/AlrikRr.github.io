@@ -627,8 +627,10 @@ function setTheme(mode) {
 
 
   <div id="content">
-    <p>Hello ! Ca faisait longtemps que je n&rsquo;avais pas fait de petit tutoriel sur mon blog !</p>
-<p>Aujourd&rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&rsquo;analyse dynamique sur une machine Windows 7 !</p>
+    <p><strong>EDIT - 03/03/2021</strong> : J&rsquo;ai modifié le tuto pour une machine virtuelle Windows 10 et non Windows 7.</p>
+<hr>
+<p>Hello ! Ca faisait longtemps que je n&rsquo;avais pas fait de petit tutoriel sur mon blog !</p>
+<p>Aujourd&rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&rsquo;analyse dynamique sur une machine Windows 10 !</p>
 <p><strong>INFO</strong> : J&rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour et virtualbox 6.1. Il se peut que vous ayez des problèmes de version suivant les paquets que vous allez installer.</p>
 <hr>
 <h1 id="avant-de-continuer">Avant de continuer</h1>
@@ -697,59 +699,45 @@ pip install -U cuckoo
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cuckoo init
 </code></pre></div><p>Si tout fonctionne bien, il vous indique le chemin vers les fichiers de configuration cuckoo.</p>
 <p>Dans mon cas, il se trouve dans <code>/home/cuckoo/.cuckoo</code>.</p>
-<h1 id="machine-virtuelle-seven">Machine Virtuelle Seven</h1>
-<p>Cuckoo est installé, on va maintenant créer notre machine virtuelle sous Windows 7.</p>
-<p><strong>Windows 10 n&rsquo;est pas très stable avec cuckoo.</strong></p>
+<h1 id="machine-virtuelle-windows-10">Machine Virtuelle Windows 10</h1>
+<p>Cuckoo est installé, on va maintenant créer notre machine virtuelle sous Windows 10.</p>
 <p>Avant d&rsquo;installer manuellement ma VM avec virtualbox, je l&rsquo;avais fait avec <code>vmcloak</code> mais malheureusement il n&rsquo;est plus compatible avec virtualbox-6.1 donc on fait autrement !</p>
-<h2 id="télécharger-liso">Télécharger l&rsquo;ISO</h2>
-<p>Rien de plus simple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://cuckoo.sh/win7ultimate.iso
-</code></pre></div><h2 id="création-de-la-vm">Création de la VM</h2>
+<h2 id="création-de-la-vm">Création de la VM</h2>
 <p>Rien d&rsquo;exceptionnel ici, installez votre VM comme vous le feriez d&rsquo;habitude sur virtualbox.</p>
 <p><strong>TIPS</strong> : Je vous recommande de lui donner 2 coeurs en CPU et 2GB en RAM car plus tard vous aurez la possibilité de faire un DUMP de la RAM et de l&rsquo;analyser avec <code>volatility</code> et je peux vous assurer qu&rsquo;un dump mémoire de 2GB est plus simple à analyse qu&rsquo;un dump mémoire de 8GB !</p>
+<p><strong>Contre-Tips</strong> : Si l&rsquo;analyse forensic des dumps ne vous intéresse pas, mettez la RAM que vous voulez !</p>
 <p>Pour la carte réseau de la machine, il faut lui attribuer la carte <strong>vboxnet0</strong>, celle que nous avons créé au tout début du tuto et une carte en accès par pont.</p>
 <p><img src="/img/tuto/cuckoo/seven_vm.png" alt="seven_vm"></p>
 <h2 id="configuration-de-la-vm">Configuration de la VM</h2>
-<p>Une fois que votre système Windows 7 est installé, il vous faut le configurer et installer différents logiciels.</p>
-<p>Si  vous n&rsquo;avez pas internet sur votre machine, je vous conseille de télécharger les outils depuis votre machine linux et de créer un serveur web pour que votre Windows puisse y accéder et les récupérer.</p>
-<p>Voici les outils à installer :</p>
+<p>Une fois que votre système Windows 10 est installé, il vous faut le configurer et installer différents logiciels.</p>
+<p>Si tout va bien, vous devez avoir accès à internet avec votre machine.</p>
+<p>Voici les outils de base à installer :</p>
 <ul>
-<li>Python2.7</li>
+<li>Python2.7 <strong>Ne pas installer Python3 !!</strong></li>
 <li>adobepdf</li>
-<li>ie11</li>
-<li>pillow</li>
+<li>pillow ( <code>C:\Python27\python.exe -m pip install Pillow</code> pour les screenshot des rapports cuckoo)</li>
 </ul>
-<p>Pour créer un serveur web rapidement, mettezvous dans le dossier où sont les exécutables :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 -m http.server <span style="color:#ae81ff">8888</span>
-</code></pre></div><p>Pour accéder à votre serveur, saisissez l&rsquo;adresse ip de votre linux avec le port 8888 depuis votre machine Windows.</p>
-<p><img src="/img/tuto/cuckoo/web_server.png" alt="web_server"></p>
 <h2 id="installation-de-lagent-cuckoo">Installation de l&rsquo;agent cuckoo</h2>
-<p>Il est important d&rsquo;installer l&rsquo;agent cuckoo qui va servir à contrôler la machine GUEST (windows 7).</p>
+<p>Il est important d&rsquo;installer l&rsquo;agent cuckoo qui va servir à contrôler la machine GUEST (windows 10).</p>
 <p>Il s&rsquo;agit d&rsquo;un script python qui se trouve dans les fichiers de configuration <code>.cuckoo/agent/agent.py</code>.<br>
-Transferez le script python à la machine GUEST et <strong>exécutez le avec les droits administrateur</strong>.</p>
+Transferez le script python à la machine GUEST et changez l&rsquo;extension en <code>agent.pyw</code>.</p>
+<p><strong>Il faut exécutez le avec les droits administrateur !</strong></p>
+<p>Pour faire ça, ouvrez un <code>cmd.exe</code> avec les droits administrateur et entrez :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">C:\Python27\pythonw.exe<span style="color:#75715e"> C:\Users\cuckoo\Downloads\agent.pyw</span>
+</code></pre></div><p><strong>TIPS</strong> : Si vous voulez transférer rapidement le fichier sur votre machine GUEST, utilisez un server python !<br>
+Pour créer un serveur web rapidement sous python, mettez vous dans le dossier où sont les fichiers et entrez :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 -m http.server <span style="color:#ae81ff">8888</span>
+</code></pre></div><p>Ensuite, pour accéder à votre serveur, saisissez l&rsquo;adresse ip de votre linux avec le port 8888 depuis votre machine Windows.</p>
+<p><img src="/img/tuto/cuckoo/web_server.png" alt="web_server"></p>
 <p>Pour vérifier si le script s&rsquo;est bien exécuté, ouvrez le <code>cmd.exe</code> et saisissez :</p>
-<pre><code class="language-dos" data-lang="dos">netstat -aon
-</code></pre><p><img src="/img/tuto/cuckoo/netstat.png" alt="netstat"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">netstat -aon
+</code></pre></div><p><img src="/img/tuto/cuckoo/netstat.png" alt="netstat"></p>
 <p>Si vous voyez un port ouvert sur <code>0.0.0.0:8000</code> c&rsquo;est que le script s&rsquo;est bien exécuté.</p>
-<p><strong>TIPS</strong> : Vous pouvez faire exécuter ce script au démarrage depuis le gestinnaire des tâches, pensez à bien cocher la case qui permet de l&rsquo;exécuter avec les droits administrateur !</p>
-<p><strong>TIPS 2</strong> : Pour que le sript s&rsquo;exécute sans le terminal, changez l&rsquo;extension en <code>agent.pyw</code>.</p>
-<p><img src="/img/tuto/cuckoo/newtask.png" alt="newtask"></p>
 <h2 id="snapshot">Snapshot</h2>
-<p>Une fois que votre installation est terminée faites une snapshot de votre machine.</p>
-<p><strong>ATTENTION</strong> : Si vous avez une deuxième carte réseau, éteignez votre machine et retirez là avant de faire votre snapshot, <strong>il vous faut absolument garder vboxnet0 et rien d&rsquo;autre.</strong><br>
-Pour des raisons de sécurité, il est nécessaire de mettre en place un réseau virtuel pour que les malwares que vous allez exécuter sur votre sandbox ne puissent pas communiquer avec les machines sur votre réseau personnel ! <strong>Supprimez les autres cartes réseaux et gardez vboxnet0</strong>, ensuite rallumez votre machine et <strong>une fois sur le bureau</strong>, faite votre snapshot.</p>
+<p>Une fois que votre installation est terminée et configurée, vous pouvez éteindre votre machine virtuelle et <strong>retirer la carte en accès par pont !</strong>.</p>
+<p>Pour des raisons de sécurité, il est nécessaire de mettre en place un réseau virtuel pour que les malwares que vous allez exécuter sur votre sandbox ne puissent pas communiquer avec les machines sur votre réseau personnel ! <strong>Supprimez les autres cartes réseaux et gardez vboxnet0</strong>, ensuite rallumez votre machine et <strong>une fois sur le bureau</strong>, faite votre snapshot.</p>
 <p><img src="/img/tuto/cuckoo/vbox_rsx.png" alt="vbox_rsx"></p>
-<p>Maintenant que votre snapshot est prête, il faut bien faire attention à ce que l'état de votre machine soit &ldquo;saved&rdquo; avant toute analyse.</p>
-<p>Je m&rsquo;explique &hellip;</p>
-<p>Si vous quittez votre machine, elle aura alors un état &ldquo;Eteinte&rdquo; comme sur la capture suivante :</p>
-<p><img src="/img/tuto/cuckoo/eteinte.png" alt="eteinte"></p>
-<p>Pour que l&rsquo;analyse dynamique soit opérationnelle, cuckoo va restorer votre machine à la dernière snapshot, si sont état est éteinte, cuckoo ne va pas pouvoir communiquer avec votre machine. Pour éviter ça, il faut la rétablir vous même avant l&rsquo;analyse.<br>
-C&rsquo;est comme ça que je fais, si vous avez une solution plus simple je prends !</p>
-<p>Pour la rétablir, c&rsquo;est simple, cliquez sur <strong>rétablir</strong> sur la snapshot :</p>
-<p><img src="/img/tuto/cuckoo/restore.png" alt="restore"></p>
-<p>Ensuite, votre machine va avoir un état <strong>saved</strong> comme ceci :</p>
-<p><img src="/img/tuto/cuckoo/saved.png" alt="saved"></p>
-<p><img src="/img/tuto/cuckoo/sauvegarde.png" alt="sauvegarde"></p>
+<p>N&rsquo;oubliez pas d&rsquo;activer l&rsquo;agent python avant de faire votre snapshot, sinon cuckoo ne sera pas en mesure de contacter votre Windows 10.</p>
 <h1 id="cuckoo-configuration">Cuckoo Configuration</h1>
 <p>Maintenant que notre machine est prête, nous allons configurer cuckoo.</p>
 <p>On commence par télécharger les plugins community avec la commande suivante :</p>
@@ -777,7 +765,7 @@ controlports = 5000-5050
 [cuckoo1]
 
 # le nom de la VM
-label = seven
+label = windows10
 
 platform = windows
 
@@ -788,7 +776,12 @@ ip = 192.168.56.101
 snapshot = origin
 
 # Laissez le reste de la configuration par défaut
-</code></pre><h2 id="configuration-du-réseau">Configuration du réseau</h2>
+</code></pre><h2 id="virustotal">VirusTotal</h2>
+<p>Par défaut, l&rsquo;impémentation VirusTotal n&rsquo;est pas activée.</p>
+<p>L&rsquo;analyse VirusTotal permet d&rsquo;afficher un scan pour une analyse statique et voir si le fichier a une signature connu comme étant un virus.</p>
+<p>Pour activer cette option, il vous suffit d&rsquo;aller dans le fichier <code>.cuckoo/conf/processing.conf</code> et changer <code>enabled = yes</code> dans la section <strong>[virustotal]</strong>.</p>
+<p><strong>ATTENTION</strong> : Cuckoo va se servir de l&rsquo;API publique de VirusTotal et envoyer tous les fichiers que vous allez analyser dans sa base de données. Les fichiers seront ensuite accessible publiquement par tous les utilisateurs !  N&rsquo;analysez pas de fichiers condidentiels si l&rsquo;analyse VirusTotal est activée.</p>
+<h2 id="configuration-du-réseau">Configuration du réseau</h2>
 <p>Comme vous avez pu le voir, notre machine n&rsquo;a actuellement aucune connexion internet sur la carte <code>vboxnet0</code>, nous allons mettre en place une redirection pour qu&rsquo;elle puisse avoir accès à internet.</p>
 <p>Dans mon cas, la carte réseau principal de mon host (la carte Wi-fi donc) se nomme <code>wlp2s0</code> changez la si besoin.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo sysctl -w net.ipv4.conf.vboxnet0.forwarding<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>

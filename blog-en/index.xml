@@ -17,10 +17,10 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog-en/tuto-en/cuckoo-install/</guid>
-      <description>Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
-Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 7 machine!
-INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.
- Before continuing Before continuing, please be aware that cuckoo&amp;rsquo;s technical documentation is very complete and can help you in case of problems.</description>
+      <description>EDIT - 03/03/202021 : I upgrade the Windows 7 install for a Windows 10.
+ Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
+Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 10 machine!
+INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.</description>
     </item>
     
     <item>

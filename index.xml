@@ -17,9 +17,10 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog-fr/tuto-fr/cuckoo-installation/</guid>
-      <description>Hello ! Ca faisait longtemps que je n&amp;rsquo;avais pas fait de petit tutoriel sur mon blog !
-Aujourd&amp;rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&amp;rsquo;analyse dynamique sur une machine Windows 7 !
-INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour et virtualbox 6.1. Il se peut que vous ayez des problèmes de version suivant les paquets que vous allez installer.</description>
+      <description>EDIT - 03/03/2021 : J&amp;rsquo;ai modifié le tuto pour une machine virtuelle Windows 10 et non Windows 7.
+ Hello ! Ca faisait longtemps que je n&amp;rsquo;avais pas fait de petit tutoriel sur mon blog !
+Aujourd&amp;rsquo;hui nous allons voir comment installer et configurer cuckoo sandbox pour de l&amp;rsquo;analyse dynamique sur une machine Windows 10 !
+INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour et virtualbox 6.</description>
     </item>
     
     <item>
@@ -28,10 +29,10 @@ INFO : J&amp;rsquo;ai réalisé ce tutoriel sur une machine Ubuntu 20.04 à jour
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/blog-en/tuto-en/cuckoo-install/</guid>
-      <description>Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
-Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 7 machine!
-INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.
- Before continuing Before continuing, please be aware that cuckoo&amp;rsquo;s technical documentation is very complete and can help you in case of problems.</description>
+      <description>EDIT - 03/03/202021 : I upgrade the Windows 7 install for a Windows 10.
+ Hello! it&amp;rsquo;s been a while since I&amp;rsquo;ve done a little tutorial on my blog!
+Today we&amp;rsquo;re going to see how to install and configure cuckoo sandbox for dynamic analysis on a Windows 10 machine!
+INFO : I made this tutorial on a Ubuntu 20.04 updated machine and virtualbox 6.1. You may have version problems depending on the packages you are going to install.</description>
     </item>
     
     <item>
