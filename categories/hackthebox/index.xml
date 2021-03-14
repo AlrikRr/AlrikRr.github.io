@@ -6,10 +6,23 @@
     <description>Recent content in HackTheBox on AlrikRr-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/hackthebox/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Academy</title>
+      <link>/blog-fr/hackthebox/academy/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/hackthebox/academy/</guid>
+      <description>Hello, ca faisait longtemps !
+J&amp;rsquo;ai laissé un peu de côté HTB pour me concentrer sur quelques projets. J&amp;rsquo;ai fait cette box il y a un moment, je partage le Write Up seulement maintenant.
+Une box simple sans prise de tête !
+Bonne lecture !
+ Tools  Kali Linux 2020 + Tous les outils ZSH Pour le Shell  nmap Comme d&amp;rsquo;habitude, un petit nmap pour voir un peu à quoi on a affaire.</description>
+    </item>
     
     <item>
       <title>Magic</title>

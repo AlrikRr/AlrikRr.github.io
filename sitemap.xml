@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
-    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <loc>/blog-fr/hackthebox/academy/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog-en/</loc>
-    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog-fr/</loc>
-    <lastmod>2021-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hackthebox/</loc>
+    <lastmod>2021-03-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog-en/</loc>
     <lastmod>2021-02-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -160,11 +170,6 @@
   <url>
     <loc>/blog-fr/iot/basic-installation/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/hackthebox/</loc>
-    <lastmod>2020-08-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
