@@ -1,0 +1,1584 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog-fr",
+        "name" : "Forest",
+        "headline" : "Forest",
+        "description" : "HackTheBox - Forest [Retired]",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2021",
+        "datePublished": "2021-05-30 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2021-05-30 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog-fr\/hackthebox\/forest\/",
+        "wordCount" : "1056",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+        
+            
+                <title>Forest</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.68.3" />
+        
+
+
+        
+            <meta name="author" content="AlrikRr">
+        
+        
+            <meta name="description" content="HackTheBox - Forest [Retired]">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Forest"/>
+<meta name="twitter:description" content="HackTheBox - Forest [Retired]"/>
+<meta name="twitter:site" content="@AlrikRr"/>
+
+        <meta property="og:title" content="Forest" />
+<meta property="og:description" content="HackTheBox - Forest [Retired]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog-fr/hackthebox/forest/" />
+<meta property="article:published_time" content="2021-05-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-30T00:00:00+00:00" />
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Forest">
+<meta itemprop="description" content="HackTheBox - Forest [Retired]">
+<meta itemprop="datePublished" content="2021-05-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-05-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1056">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+	    <link disabled id="dark-mode-theme" rel="stylesheet" href="/css/dark.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog-fr</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog-fr/">
+                            <i class="">&nbsp;</i>🇫🇷 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog-en/">
+                            <i class="">&nbsp;</i>🇬🇧 Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/projects/">
+                            <i class="fa fa-list">&nbsp;</i>Projects
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="">&nbsp;</i>👺 My resume
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://www.levulgarisateurnumerique.com/">
+                            <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://secforall.org/">
+                            <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li>
+	 <a id="dark-mode-toggle" class="fal fa-moon-o">Dark Mode</a>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+var toggle = document.getElementById("dark-mode-toggle");
+var darkTheme = document.getElementById("dark-mode-theme");
+var savedTheme = localStorage.getItem("dark-mode-storage") || "light";
+setTheme(savedTheme);
+
+toggle.addEventListener("click", () => {
+    if (toggle.className === "fal fa-moon-o") {
+        setTheme("dark");
+    } else if (toggle.className === "fal fa-sun-o") {
+        setTheme("light");
+    }
+});
+
+function setTheme(mode) {
+	    localStorage.setItem("dark-mode-storage", mode);
+    if (mode === "dark") {
+        darkTheme.disabled = false;
+        toggle.className = "fal fa-sun-o";
+    } else if (mode === "light") {
+        darkTheme.disabled = true;
+        toggle.className = "fal fa-moon-o";
+    }
+}
+	</script>
+
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog-fr/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇫🇷 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog-en/">
+                            <h3>
+                                <i class="">&nbsp;</i>🇬🇧 Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/projects/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Projects
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="">&nbsp;</i>👺 My resume
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.levulgarisateurnumerique.com/">
+                            <h3>
+                                <i class="">&nbsp;</i>🦊 LeVulgaNum ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://secforall.org/">
+                            <h3>
+                                <i class="">&nbsp;</i>🕵️ SecForAll ⇢
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/hackthebox/forest/">Forest</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-05-30'>
+                                    May 30, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/forest/" class="image featured">
+            <img src="/img//writeup/forest/htb-forest.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/hackthebox/academy/">Academy</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-14'>
+                                    March 14, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/academy/" class="image featured">
+            <img src="/img//writeup/academy/htb-academy.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-fr/tuto-fr/cuckoo-installation/">🇫🇷  Procédure d&#39;installation cuckoo</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-26'>
+                                    February 26, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/tuto-fr/cuckoo-installation/" class="image featured">
+            <img src="/img//tuto/cuckoo/cuckoo-fr.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-en/tuto-en/cuckoo-install/">🇬🇧  How to install Cuckoo sandbox</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-26'>
+                                    February 26, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/tuto-en/cuckoo-install/" class="image featured">
+            <img src="/img//tuto/cuckoo/cuckoo-en.png" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-25'>
+                                    February 25, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-02-22'>
+                                    February 22, 2021</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;text=Forest&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;title=Forest" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;title=Forest" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog-fr/hackthebox/forest/">Forest</a></h1>
+            
+        
+        
+            <p>HackTheBox - Forest [Retired]</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2021-05-30'>
+            May 30, 2021</time>
+        <span class="author">AlrikRr</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;text=Forest&amp;via=AlrikRr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;title=Forest" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog-fr%2fhackthebox%2fforest%2f&amp;title=Forest" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/forest/" class="image featured">
+            <img src="/img//writeup/forest/htb-forest.png" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    <p><img src="/img/writeup/forest/forest.png" alt="Academy"></p>
+<p>Je suis tellement régulier dans mes articles, c&rsquo;est fou !</p>
+<p>Je vais essayé de reprendre un peu les write-up HTB et faire quelques tuto sur d&rsquo;autres sujets, les projets scolaire commencent à diminuer !</p>
+<p>Aujourd&rsquo;hui je vais vous faire un petit write-up sur Forest, une machine HTB Windows avec un Active Directory dérrière ! Autant vous dire que je n&rsquo;ai pas du tout l&rsquo;habitude et je n'étais pas tout seul pour la réalisation de celui-ci, autant être honnête !</p>
+<p>C'était avant tout histoire d&rsquo;avoir un aperçu et des outils car ce lancer tête baissé dans du Windows avec AD quand on en a jamais fait, c&rsquo;est pas simple du tout !</p>
+<p>Bonne lecture !</p>
+<hr>
+<h1 id="tools">Tools</h1>
+<ul>
+<li>Kali Linux 2021 + Tous les outils</li>
+<li>BloodHound</li>
+<li>La suite Impacket</li>
+<li>Evil-Winrm</li>
+</ul>
+<h1 id="enumeration">Enumeration</h1>
+<h2 id="nmap">NMAP</h2>
+<p>On commence notre reconnaissance avec nmap pour avoir un aperçu des service qui tournent sur la machine.</p>
+<p><code>sudo nmap -v -sS -A -Pn 10.10.10.161</code></p>
+<p>J&rsquo;ai complètement oublié de mettre l&rsquo;ip dans <code>/etc/hosts</code> <img src="/img/emoji/panik.png" alt="panik"></p>
+<p><img src="/img/writeup/forest/nmap.png" alt="nmap"></p>
+<p>On peut voir beaucoup de service Windows, on déduit rapidment que la machine tourne sous un système Windows. <img src="/img/emoji/knowledge.png" alt="knowledge"></p>
+<p>Très certainement une version Active Directory (Kerberos, DNS, LDAP …) Ca va ouvrir grandement notre champ d&rsquo;action pour trouver une porte d&rsquo;entrée.<br>
+A noter que la machine fait partie du domain <strong>HTB.local</strong></p>
+<p><strong>Bonus</strong> : Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)</p>
+<h2 id="ldapsearch">LDAPSEARCH</h2>
+<p>Vu qu&rsquo;il y a un LDAP, on va tester si celui-ci est configuré de façon à autoriser une énumération en Anonymous.</p>
+<p>Pour ça, on va utiliser l&rsquo;outil <strong>ldapsearch</strong></p>
+<p><img src="/img/writeup/forest/ldapsearch.png" alt="ldapsearch"></p>
+<p><strong>Options</strong> :</p>
+<ul>
+<li><strong>h</strong> : L&rsquo;adresse IP du serveur LDAP</li>
+<li><strong>p</strong> : Le port utilisé pour le protocole LDAP, ici le 389</li>
+<li><strong>x</strong> : Indique que l&rsquo;on fait une authentification anonymous</li>
+<li><strong>b</strong> : Décompose le nom de domaine, htb.local</li>
+</ul>
+<p>On peut clairement voir que l'énumération fonctionne sans authentification (10758 ligne dans le fichier en sortie), cela indique que <strong>null bind</strong> est activé.</p>
+<p><strong>RAPPEL</strong> :</p>
+<blockquote>
+<p>“The NULL bind entry allows a user to access the Lightweight Directory Access Protocol (LDAP) directory anonymously. An attacker could take advantage of the NULL bind entry to anonymously view files on the LDAP director.”</p>
+<p><a href="">http://www.iss.net/security_center/reference/vuln/ldap-nullbind.htm</a></p>
+</blockquote>
+<h2 id="windapsearch">WINDAPSEARCH</h2>
+<p>Voici un autre outil qui permet d'énumérer les utilisateur si le LDAP est en null bind.</p>
+<p><a href="">https://github.com/ropnop/windapsearch </a></p>
+<p><img src="/img/writeup/forest/windapsearch.png" alt="windpasearch"></p>
+<p>On peut également voir des comptes de serveur mail (service), on suppose qu&rsquo;un serveur Exchange tourne sur la machine.</p>
+<p>Si on veut énumérer plus d&rsquo;objet LDAP, il nous suffit d&rsquo;utiliser le filtre suivant : <code>objectClass=*</code></p>
+<p><img src="/img/writeup/forest/windapsearch2.png" alt="windpasearch2"></p>
+<p>En parcourant les différentes entrées, quelques unes étaient intéréssante mais j&rsquo;ai jeté mon intérêt sur ce compte là !</p>
+<p><img src="/img/writeup/forest/windapsearch_alfresco.png" alt="windpasearch_alfresco"></p>
+<p>Dans la <a href="https://docs.alfresco.com/process-services/latest/config/authenticate/#kerberos-and-active-directory">documentation officielle</a>, on remarque la chose suivante :</p>
+<p><img src="/img/writeup/forest/alfresco_documentation.png" alt="alfresco_documentation"></p>
+<p>La pre-authentification Kerberos n&rsquo;est pas nécessaire, donc on peut récupérer le TGT pour cet utilisateur.</p>
+<blockquote>
+<p>TGT : Ticket-Granting Ticket</p>
+</blockquote>
+<p>Sachant que le <strong>TGT contient le Hash NTLM de l&rsquo;utilisateur</strong>, il ne nous reste plus qu'à essayé de le brute force une fois en notre posséssion.</p>
+<h1 id="exploit---hash">Exploit - Hash</h1>
+<h2 id="getnpusers">GetNPUsers</h2>
+<p>On va utiliser l&rsquo;outil GetNPUsers de la suite impacket, cet outil va permettre de lancer une authentification et récupérer le hash TGT pour ensuite le craquer et récupérer le hash NTLM de l&rsquo;utilisateur.</p>
+<p><img src="/img/writeup/forest/getnpusers.png" alt="getnpusers"></p>
+<p>Bingo ! <img src="/img/emoji/eliot-yeah.png" alt="eliot-yeah"></p>
+<p>On a notre TGT pour l&rsquo;utilisateur <code>svc-alfresco</code> :</p>
+<pre><code>$krb5asrep$23$svc-alfresco@HTB.LOCAL:1cf5435125822f347d2cd84de032a835$81fd9e50a029b410d7f228aa441691ea42d8ecae5a55be8d8001fa58ce5ceb87da469c074c2c77c91f00ce9bb0129db6df81ba7a56558499a92fef90494df043f244254a1d8d8057a7642517498da13755b356dcb7dc13296f8da4c5291209cbfb421402802aa2fe0af79c7a74c284a5dafc664d09a8b410af8bc25d163991dcec28573e3326614999d97c1a3778f6e5f8561f4e7a9c99a68181b35d5f1c8135ad4e29e4825face5a2fe784e3f79256531a1405ae707fe712d894342ec41a75383bbcd2897b5b116b5579d125f7005d4478fa3c85858d4c297678d52359e8e54bb5879484ca6
+</code></pre><p>Il ne nous reste pus qu'à le craquer en utilisant une wordlist.</p>
+<h2 id="johntheripper">JohnTheRipper</h2>
+<p><img src="/img/writeup/forest/john_crack.png" alt="john_crack"></p>
+<p>En utilisant la wordlist <code>rockyou.txt</code> on trouve facilement le mot de passe qui est : <strong>s3rvice</strong></p>
+<h2 id="evil-winrm">EVIL-WINRM</h2>
+<p>Maintenant que l&rsquo;on a notre user et son mot de passe, il ne nous reste plus qu'à initier une connexion à distance sur le serveur.<br>
+Avec l&rsquo;outil Evil-Winrm, on va utiliser le protocol <strong>Windows Remote Manager</strong> qui est par chance ouvert sur cette machine.</p>
+<p><img src="/img/writeup/forest/evil-winrm.png" alt="evil-winrm"></p>
+<p>Nous avons maintenant un accès system avec un compte de service !</p>
+<h1 id="system-enumeration">System Enumeration</h1>
+<h2 id="bloodhound">Bloodhound</h2>
+<p>Dans cette partie je vais utiliser <strong>bloodhound-python</strong> pour générer les fichier JSON et ensuite les importer dans la version GUI.</p>
+<p><img src="/img/writeup/forest/bloodhound-python.png" alt="bloodhound-python"></p>
+<p>Une fois les JSON importé, on recherche notre utilisateur et on le marque comme <strong>owned</strong>.<br>
+Ensuite on double clique dessus pour afficher les groupes des lesquels il appartient.</p>
+<p><img src="/img/writeup/forest/bloodhound-gui_groups.png" alt="bloodhound-gui_groups"></p>
+<p>On peut voir que l&rsquo;utilisateur est membre du group suivant : <strong>ACCOUNT OPERATORS</strong></p>
+<p>En regardant la documentation, on peut voir que les membres de ce groupe peuvent modifier et ajouter des utilistateurs dans des groupes qui ne sont pas protégés.</p>
+<blockquote>
+<p>&ldquo;The Account Operators group grants limited account creation privileges to a user. Members of this group can create and modify most types of accounts, including those of users, local groups, and global groups, and members can log in locally to domain controllers.&rdquo;</p>
+<p><a href="">https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-accountoperators</a></p>
+</blockquote>
+<p>On peut garder cette information pour plus tard, maintenant on va utiliser la query suivante et afficher le chemin le plus court pour devenir Administrateur.</p>
+<p><img src="/img/writeup/forest/bloodhound-gui_query.png" alt="bloodhound-gui_query"></p>
+<p><img src="/img/writeup/forest/bloodhound-gui_path-to-dc.png" alt="bloodhound-gui_path-to-dc"></p>
+<p>On peut voir que les membres du groups <strong>EXCHANGE WINDOWS PERMISSION</strong> on le droit <strong>WriteDacl</strong> sur le DC, ce qui veut dire qu&rsquo;ils peuvent créer des ACL sur les objets.<br>
+Donc, logiquement, avec le compte svc-alfresco, on peut créer un utilisateur et l&rsquo;ajouter dans ce groupe et lui donner le droit DCSync.</p>
+<blockquote>
+<p>&ldquo;Special rights are required to run DCSync. Any member of Administrators, Domain Admins, or Enterprise Admins as well as Domain Controller computer accounts are able to run DCSync to pull password data.&rdquo;</p>
+<p><a href="">https://adsecurity.org/?p=1729</a></p>
+</blockquote>
+<h2 id="creation-de-lutilisateur">Creation de l&rsquo;utilisateur</h2>
+<p><img src="/img/writeup/forest/evil-winrm_new-user.png" alt="evil-winrm_new-user"></p>
+<p>Ici, on vient de créer un utilisateur <strong>alrikrr</strong> avec le mot de passe <strong>atoor1!</strong></p>
+<p><strong>Attention</strong> : Il faut respecter une politique de mot de passe pour la création du compte !</p>
+<p>Ensuite on l&rsquo;ajoute dans le groupe <strong>EXCHANGE WINDOWS PERMISSIONS</strong> et <strong>REMOTE MANAGEMENT USERS</strong>.</p>
+<p>On va importer le script Powershell <a href="https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1">PowerView.ps1</a> avec Evil-Winrm.</p>
+<p><img src="/img/writeup/forest/evil-winrm_menu.png" alt="evil-winrm_menu"></p>
+<p><img src="/img/writeup/forest/evil-winrm_bypass.png" alt="evil-winrm_bypass"></p>
+<p>Bypass-4MSI permet d&rsquo;outre passer Defender avant d&rsquo;importer le script.<br>
+Ensuite, peut utiliser la commande <strong>Add-ObjectACL</strong> avec les identifiants de notre utilisateur alrikrr et lui donner les droits DCSync !</p>
+<h2 id="secretsdump">SECRETSDUMP</h2>
+<p>Maintenant, on peut utiliser l&rsquo;ouil <strong>secretsdump</strong> de la suite impackets toujours pour avoir les hashs de tous les utilisateurs du domaine.</p>
+<p><img src="/img/writeup/forest/secretsdump.png" alt="secretsdump"></p>
+<p>Celui qui nous intéresse c&rsquo;est le hash de l&rsquo;<strong>Administrateur</strong>, le premier : <code>aad3b435b51404eeaad3b435b51404ee:32693b11e6aa90eb43d32c72a07ceea6</code></p>
+<h2 id="psexec">PSEXEC</h2>
+<p>On va maintenant utiliser <strong>psexec.py</strong> avec ce hash pour s&rsquo;authentifier avec son compte, pas besoin de connaitre le mot de passe vu que l&rsquo;on a le hash !</p>
+<p><img src="/img/writeup/forest/psexec.png" alt="psexec"></p>
+<p>Et voilà, nous voila Administrateur de la machine ! On peut récupérer les flags USER et ROOT !</p>
+<hr>
+<p>C'était une boxe assez compliqué pour quelqu&rsquo;un comme moi qui n&rsquo;a jamais vraiment fait de pentest AD mais c&rsquo;est une bonne prise en main sur les outils et la méthodologie à avoir !</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hackthebox">HackTheBox</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog-fr/hackthebox/academy/"
+                class="button big previous">Academy</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/img/main/logo.jpg" class="intro-circle" width="250" alt="AlrikRr" /></a>
+      
+    
+    
+      <header>
+        <h2>Hello, friend.</h2>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/hackthebox/forest/">Forest</a>
+              </h3>
+              
+              <time class="published" datetime='2021-05-30'>
+                May 30, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/forest/" class="image featured">
+            <img src="/img//writeup/forest/htb-forest.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/hackthebox/academy/">Academy</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-14'>
+                March 14, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/hackthebox/academy/" class="image featured">
+            <img src="/img//writeup/academy/htb-academy.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-fr/tuto-fr/cuckoo-installation/">🇫🇷  Procédure d&#39;installation cuckoo</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-26'>
+                February 26, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-fr/tuto-fr/cuckoo-installation/" class="image featured">
+            <img src="/img//tuto/cuckoo/cuckoo-fr.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-en/tuto-en/cuckoo-install/">🇬🇧  How to install Cuckoo sandbox</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-26'>
+                February 26, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/tuto-en/cuckoo-install/" class="image featured">
+            <img src="/img//tuto/cuckoo/cuckoo-en.png" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-en/vulnhub/y0usef/">🇬🇧 Vulnhub writeup : y0usef 1</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-25'>
+                February 25, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/y0usef/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog-en/vulnhub/bellatrix/">🇬🇧 Vulnhub writeup : Bellatrix</a>
+              </h3>
+              
+              <time class="published" datetime='2021-02-22'>
+                February 22, 2021
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="/blog-en/vulnhub/bellatrix/" class="image featured">
+            <img src="/img//vulnhub/banner.gif" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hackthebox/">hackthebox</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-tuto/">fr-tuto</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/projects/">projects</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-nixos/">en-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/fr-nixos/">fr-nixos</a>
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/exploitation-binaire/">exploitation-binaire</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/iot/">iot</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/machine-learning/">machine-learning</a>
+                <span style="float:right;">3</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/archlinux/">archlinux</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hacking/">hacking</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/vulnhub/">vulnhub</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/android/">android</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/en-tuto/">en-tuto</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/project/">project</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/raspberry/">raspberry</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/s%C3%A9curit%C3%A9/">sécurité</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/AlrikRr" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/adrien-lasalle" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//reddit.com/user/AlrikRr" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+  <li><a href="//youtube.com/https://www.youtube.com/channel/UCnfAzfzPenSKIRLUCtKA4VA" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/AlrikRr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          AlrikRr-Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

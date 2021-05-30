@@ -6,10 +6,21 @@
     <description>Recent content in Blog-fr on AlrikRr-Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog-fr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Forest</title>
+      <link>/blog-fr/hackthebox/forest/</link>
+      <pubDate>Sun, 30 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog-fr/hackthebox/forest/</guid>
+      <description>Je suis tellement régulier dans mes articles, c&amp;rsquo;est fou !
+Je vais essayé de reprendre un peu les write-up HTB et faire quelques tuto sur d&amp;rsquo;autres sujets, les projets scolaire commencent à diminuer !
+Aujourd&amp;rsquo;hui je vais vous faire un petit write-up sur Forest, une machine HTB Windows avec un Active Directory dérrière ! Autant vous dire que je n&amp;rsquo;ai pas du tout l&amp;rsquo;habitude et je n&#39;étais pas tout seul pour la réalisation de celui-ci, autant être honnête !</description>
+    </item>
     
     <item>
       <title>Academy</title>
