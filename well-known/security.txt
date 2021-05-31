@@ -11,5 +11,5 @@
 # Report Security Issue
 Contact: mailto:alrikrr.contact@protonmail.com
 Expires: 2022-12-31T23:00:00.000Z
-Encryption: https://alrikrr.github.io/doc/publikey.asc
+Encryption: https://alrikrr.github.io/doc/publickey.asc
 Preferred-Languages: fr,en
